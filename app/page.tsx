@@ -1,8 +1,45 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
+import { motion } from "framer-motion"
 
 export default function Component() {
+  const cardVariants = {
+    offscreen: {
+      y: 50,
+      opacity: 0
+    },
+    onscreen: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        type: "spring",
+        bounce: 0.4,
+        duration: 0.8
+      }
+    }
+  }
+
+  const imageVariants = {
+    hover: {
+      scale: 1.05,
+      transition: {
+        duration: 0.3,
+        ease: "easeInOut"
+      }
+    }
+  }
+
+  const textVariants = {
+    hover: {
+      y: -5,
+      transition: {
+        duration: 0.3,
+        ease: "easeInOut"
+      }
+    }
+  }
+
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
@@ -97,57 +134,70 @@ export default function Component() {
 
       {/* Features Section */}
       <div className="max-w-7xl mx-auto">
-        <section className="py-24 px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-20">
+        <motion.section 
+          initial="offscreen"
+          whileInView="onscreen"
+          viewport={{ once: true, amount: 0.3 }}
+          className="py-24 px-4 sm:px-6 lg:px-8"
+        >
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-20"
+          >
             <h2 className="text-4xl md:text-5xl font-serif font-bold text-stone-900 mb-4">
               Why Choose Serenica?
             </h2>
             <p className="text-lg text-stone-600 max-w-2xl mx-auto">
               Experience meditation reimagined through the perfect blend of ancient wisdom and modern technology.
             </p>
-          </div>
+          </motion.div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-white rounded-3xl p-6 shadow-lg border border-stone-100 hover:shadow-xl transition-all duration-300">
-              <div className="aspect-[4/3] relative mb-6 rounded-2xl overflow-hidden bg-stone-100">
-                <Image
-                  src="https://images.pexels.com/photos/3560044/pexels-photo-3560044.jpeg"
-                  alt="AI-powered meditation"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <h3 className="text-xl font-bold mb-3">Instant Emotional Check-in</h3>
-              <p className="text-stone-600">AI-powered analysis instantly understands your mental state and recommends the perfect meditation.</p>
-            </div>
-
-            <div className="bg-white rounded-3xl p-6 shadow-lg border border-stone-100 hover:shadow-xl transition-all duration-300">
-              <div className="aspect-[4/3] relative mb-6 rounded-2xl overflow-hidden bg-stone-100">
-                <Image
-                  src="https://images.pexels.com/photos/3822622/pexels-photo-3822622.jpeg"
-                  alt="Personalized meditation"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <h3 className="text-xl font-bold mb-3">Personalized Journey</h3>
-              <p className="text-stone-600">Customized meditation paths that evolve with your practice and adapt to your progress.</p>
-            </div>
-
-            <div className="bg-white rounded-3xl p-6 shadow-lg border border-stone-100 hover:shadow-xl transition-all duration-300">
-              <div className="aspect-[4/3] relative mb-6 rounded-2xl overflow-hidden bg-stone-100">
-                <Image
-                  src="https://images.pexels.com/photos/897817/pexels-photo-897817.jpeg"
-                  alt="Progress tracking"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <h3 className="text-xl font-bold mb-3">Progress Insights</h3>
-              <p className="text-stone-600">Track your mindfulness journey with detailed analytics and personalized recommendations.</p>
-            </div>
+            {[
+              {
+                image: "https://images.pexels.com/photos/3560044/pexels-photo-3560044.jpeg",
+                title: "Instant Emotional Check-in",
+                description: "AI-powered analysis instantly understands your mental state and recommends the perfect meditation."
+              },
+              {
+                image: "https://images.pexels.com/photos/3822622/pexels-photo-3822622.jpeg",
+                title: "Personalized Journey",
+                description: "Customized meditation paths that evolve with your practice and adapt to your progress."
+              },
+              {
+                image: "https://images.pexels.com/photos/897817/pexels-photo-897817.jpeg",
+                title: "Progress Insights",
+                description: "Track your mindfulness journey with detailed analytics and personalized recommendations."
+              }
+            ].map((card, index) => (
+              <motion.div
+                key={index}
+                variants={cardVariants}
+                whileHover="hover"
+                custom={index}
+                className="bg-white rounded-3xl p-6 shadow-lg border border-stone-100 hover:shadow-xl transition-all duration-300"
+              >
+                <motion.div 
+                  className="aspect-[4/3] relative mb-6 rounded-2xl overflow-hidden bg-stone-100"
+                  variants={imageVariants}
+                >
+                  <Image
+                    src={card.image}
+                    alt={card.title}
+                    fill
+                    className="object-cover"
+                  />
+                </motion.div>
+                <motion.div variants={textVariants}>
+                  <h3 className="text-xl font-bold mb-3">{card.title}</h3>
+                  <p className="text-stone-600">{card.description}</p>
+                </motion.div>
+              </motion.div>
+            ))}
           </div>
-        </section>
+        </motion.section>
 
         {/* Pricing Section */}
         <section className="py-24 px-4 sm:px-6 lg:px-8 rounded-[3rem]">
