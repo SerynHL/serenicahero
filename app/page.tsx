@@ -79,18 +79,9 @@ export default function Component() {
                 Find your inner calm.
               </h1>
 
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif text-white/90 mb-4 leading-tight">
-                A personalized meditation
-              </h2>
-
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif text-white/90 mb-12 leading-tight">
-                journey guided by AI.
+                Experience personalized meditation sessions powered by AI.
               </h2>
-
-              {/* Subheading */}
-              <p className="text-xl md:text-2xl text-white/85 mb-16 max-w-4xl mx-auto leading-relaxed font-sans font-light">
-                Serenica tailors every session to your state of mind—so every moment of peace is truly yours.
-              </p>
 
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
@@ -99,13 +90,6 @@ export default function Component() {
                   className="bg-white hover:bg-stone-50 text-stone-900 px-10 py-4 text-lg font-semibold font-sans rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 border-2 border-white"
                 >
                   Start 7-day free trial
-                </Button>
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="border-2 border-white/40 text-white hover:bg-white/10 hover:border-white/60 px-10 py-4 text-lg font-medium font-sans rounded-full backdrop-blur-md transition-all duration-300 hover:scale-105"
-                >
-                  Learn more
                 </Button>
               </div>
             </div>
