@@ -186,12 +186,7 @@ export default function Component() {
               </Button>
             </div>
             {/* Pro Plan */}
-            <div className="bg-stone-900 p-8 rounded-3xl border-2 border-stone-700 text-white transform scale-105 shadow-2xl relative">
-              <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                <span className="bg-black text-white text-sm font-bold px-6 py-2 rounded-full shadow-lg">
-                  Most Popular
-                </span>
-              </div>
+            <div className="bg-stone-900 p-8 rounded-3xl border-2 border-stone-700 text-white transform scale-105 shadow-2xl">
               <h3 className="text-xl font-bold mb-2">Pro</h3>
               <div className="mb-6">
                 <span className="text-4xl font-bold">$19</span>
