@@ -49,54 +49,54 @@ export default function Component() {
         </div>
       </header>
 
-      <div className="max-w-[90rem] mx-auto">
-        {/* Hero Section */}
-        <section className="px-4 sm:px-6 lg:px-8 py-2">
-          <div className="relative min-h-[85vh] flex items-center justify-center overflow-hidden rounded-3xl border border-stone-200 shadow-2xl">
-            {/* Background Image */}
-            <div className="absolute inset-0 rounded-3xl">
-              <Image
-                src="/meditation-hero.png"
-                alt="Person meditating in peaceful pose"
-                fill
-                className="object-cover rounded-3xl"
-                priority
-              />
-              {/* Subtle overlay for text readability without changing image colors */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-black/10 rounded-3xl"></div>
+      {/* Hero Section */}
+      <div className="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8 py-2">
+        <div className="relative min-h-[85vh] flex items-center justify-center overflow-hidden rounded-3xl border border-stone-200 shadow-2xl">
+          {/* Background Image */}
+          <div className="absolute inset-0 rounded-3xl">
+            <Image
+              src="/meditation-hero.png"
+              alt="Person meditating in peaceful pose"
+              fill
+              className="object-cover rounded-3xl"
+              priority
+            />
+            {/* Subtle overlay for text readability without changing image colors */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-black/10 rounded-3xl"></div>
+          </div>
+
+          {/* Content */}
+          <div className="relative z-10 text-center max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            {/* Trust Badge */}
+            <div className="inline-flex items-center px-6 py-3 rounded-full bg-white/15 backdrop-blur-md border border-white/25 text-white/95 text-sm font-medium font-sans mb-6">
+              <span className="mr-2">🧘‍♀️</span>
+              Trusted by 100,000+ mindful souls
             </div>
 
-            {/* Content */}
-            <div className="relative z-10 text-center max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-              {/* Trust Badge */}
-              <div className="inline-flex items-center px-6 py-3 rounded-full bg-white/15 backdrop-blur-md border border-white/25 text-white/95 text-sm font-medium font-sans mb-6">
-                <span className="mr-2">🧘‍♀️</span>
-                Trusted by 100,000+ mindful souls
-              </div>
+            {/* Main Headline */}
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif text-white mb-4 leading-[1.1]">
+              Find your inner calm.
+            </h1>
 
-              {/* Main Headline */}
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif text-white mb-4 leading-[1.1]">
-                Find your inner calm.
-              </h1>
+            <p className="text-lg md:text-xl text-white/90 mb-8 max-w-2xl mx-auto leading-relaxed font-sans">
+              Experience personalized meditation sessions powered by AI.
+            </p>
 
-              <p className="text-lg md:text-xl text-white/90 mb-8 max-w-2xl mx-auto leading-relaxed font-sans">
-                Experience personalized meditation sessions powered by AI.
-              </p>
-
-              {/* CTA Button */}
-              <div className="flex justify-center">
-                <Button
-                  size="lg"
-                  className="bg-white hover:bg-stone-50 text-stone-900 px-10 py-4 text-lg font-semibold font-sans rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 border-2 border-white"
-                >
-                  Start 7-day free trial
-                </Button>
-              </div>
+            {/* CTA Button */}
+            <div className="flex justify-center">
+              <Button
+                size="lg"
+                className="bg-white hover:bg-stone-50 text-stone-900 px-10 py-4 text-lg font-semibold font-sans rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 border-2 border-white"
+              >
+                Start 7-day free trial
+              </Button>
             </div>
           </div>
-        </section>
+        </div>
+      </div>
 
-        {/* Features Grid */}
+      {/* Features Grid */}
+      <div className="max-w-7xl mx-auto">
         <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white to-stone-50 rounded-[3rem]">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-serif font-bold text-stone-900 mb-4">
@@ -310,7 +310,7 @@ export default function Component() {
 
       {/* Footer */}
       <footer className="bg-stone-900 text-white py-16 px-4 sm:px-6 lg:px-8 mt-24 rounded-t-[3rem]">
-        <div className="max-w-[90rem] mx-auto">
+        <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
             {/* Brand */}
             <div className="space-y-4">
