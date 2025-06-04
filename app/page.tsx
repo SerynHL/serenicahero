@@ -52,18 +52,18 @@ export default function Component() {
       {/* Hero Section */}
       <section className="relative px-4 sm:px-6 lg:px-8 py-2">
         <div className="max-w-full mx-auto">
-          <div className="relative min-h-[85vh] flex items-center justify-center overflow-hidden rounded-3xl border border-stone-200 shadow-2xl">
+          <div className="relative min-h-[85vh] flex items-center justify-center overflow-hidden rounded-none">
             {/* Background Image */}
-            <div className="absolute inset-0 rounded-2xl">
+            <div className="absolute inset-0">
               <Image
                 src="/meditation-hero.png"
                 alt="Person meditating in peaceful pose"
                 fill
-                className="object-cover rounded-2xl"
+                className="object-cover"
                 priority
               />
               {/* Subtle overlay for text readability without changing image colors */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-black/10 rounded-2xl"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-black/10"></div>
             </div>
 
             {/* Content */}
