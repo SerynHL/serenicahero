@@ -52,24 +52,24 @@ export default function Component() {
       {/* Hero Section */}
       <section className="relative px-4 sm:px-6 lg:px-8 py-2">
         <div className="max-w-full mx-auto">
-          <div className="relative min-h-[85vh] flex items-center justify-center overflow-hidden rounded-none">
+          <div className="relative min-h-[85vh] flex items-center justify-center overflow-hidden rounded-2xl border border-stone-200 shadow-lg">
             {/* Background Image */}
-            <div className="absolute inset-0">
+            <div className="absolute inset-0 rounded-2xl">
               <Image
                 src="/meditation-hero.png"
                 alt="Person meditating in peaceful pose"
                 fill
-                className="object-cover"
+                className="object-cover rounded-2xl"
                 priority
               />
               {/* Subtle overlay for text readability without changing image colors */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-black/10"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-black/10 rounded-2xl"></div>
             </div>
 
             {/* Content */}
             <div className="relative z-10 text-center max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
               {/* Trust Badge */}
-              <div className="inline-flex items-center px-6 py-3 rounded-full bg-white/15 backdrop-blur-md border border-white/25 text-white/95 text-sm font-medium font-sans mb-6">
+              <div className="inline-flex items-center px-6 py-3 rounded-full bg-white/15 backdrop-blur-md border border-white/25 text-white/95 text-sm font-medium font-sans mb-6 shadow-lg">
                 <span className="mr-2">🧘‍♀️</span>
                 Trusted by 100,000+ mindful souls
               </div>
@@ -108,7 +108,7 @@ export default function Component() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Feature 1 */}
-            <div className="bg-white p-8 rounded-2xl shadow-lg">
+            <div className="bg-white p-8 rounded-2xl shadow-lg border border-stone-200">
               <div className="w-12 h-12 bg-stone-100 rounded-full flex items-center justify-center mb-6">
                 <span className="text-2xl">🎯</span>
               </div>
@@ -116,7 +116,7 @@ export default function Component() {
               <p className="text-stone-600">AI-driven recommendations that adapt to your progress and preferences.</p>
             </div>
             {/* Feature 2 */}
-            <div className="bg-white p-8 rounded-2xl shadow-lg">
+            <div className="bg-white p-8 rounded-2xl shadow-lg border border-stone-200">
               <div className="w-12 h-12 bg-stone-100 rounded-full flex items-center justify-center mb-6">
                 <span className="text-2xl">🧠</span>
               </div>
@@ -124,7 +124,7 @@ export default function Component() {
               <p className="text-stone-600">Expert-led meditations for every experience level and goal.</p>
             </div>
             {/* Feature 3 */}
-            <div className="bg-white p-8 rounded-2xl shadow-lg">
+            <div className="bg-white p-8 rounded-2xl shadow-lg border border-stone-200">
               <div className="w-12 h-12 bg-stone-100 rounded-full flex items-center justify-center mb-6">
                 <span className="text-2xl">📊</span>
               </div>
@@ -146,7 +146,7 @@ export default function Component() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Basic Plan */}
-            <div className="bg-white p-8 rounded-2xl border border-stone-200">
+            <div className="bg-white p-8 rounded-2xl shadow-lg border border-stone-200">
               <h3 className="text-xl font-bold mb-2">Basic</h3>
               <div className="mb-6">
                 <span className="text-4xl font-bold">$9</span>
@@ -171,7 +171,7 @@ export default function Component() {
               </Button>
             </div>
             {/* Pro Plan */}
-            <div className="bg-stone-900 p-8 rounded-2xl border border-stone-700 text-white transform scale-105">
+            <div className="bg-stone-900 p-8 rounded-2xl shadow-xl border border-stone-700 text-white transform scale-105">
               <h3 className="text-xl font-bold mb-2">Pro</h3>
               <div className="mb-6">
                 <span className="text-4xl font-bold">$19</span>
@@ -200,7 +200,7 @@ export default function Component() {
               </Button>
             </div>
             {/* Enterprise Plan */}
-            <div className="bg-white p-8 rounded-2xl border border-stone-200">
+            <div className="bg-white p-8 rounded-2xl shadow-lg border border-stone-200">
               <h3 className="text-xl font-bold mb-2">Enterprise</h3>
               <div className="mb-6">
                 <span className="text-4xl font-bold">$49</span>
@@ -243,7 +243,7 @@ export default function Component() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Testimonial 1 */}
-            <div className="bg-white p-8 rounded-2xl shadow-lg">
+            <div className="bg-white p-8 rounded-2xl shadow-lg border border-stone-200">
               <div className="flex items-center mb-6">
                 <div className="w-12 h-12 bg-stone-200 rounded-full mr-4"></div>
                 <div>
@@ -256,7 +256,7 @@ export default function Component() {
               </p>
             </div>
             {/* Testimonial 2 */}
-            <div className="bg-white p-8 rounded-2xl shadow-lg">
+            <div className="bg-white p-8 rounded-2xl shadow-lg border border-stone-200">
               <div className="flex items-center mb-6">
                 <div className="w-12 h-12 bg-stone-200 rounded-full mr-4"></div>
                 <div>
@@ -269,7 +269,7 @@ export default function Component() {
               </p>
             </div>
             {/* Testimonial 3 */}
-            <div className="bg-white p-8 rounded-2xl shadow-lg">
+            <div className="bg-white p-8 rounded-2xl shadow-lg border border-stone-200">
               <div className="flex items-center mb-6">
                 <div className="w-12 h-12 bg-stone-200 rounded-full mr-4"></div>
                 <div>
