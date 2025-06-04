@@ -98,7 +98,7 @@ export default function Component() {
       {/* Features Grid */}
       <div className="max-w-7xl mx-auto">
         <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white to-stone-50 rounded-[3rem]">
-          <div className="text-center mb-16">
+          <div className="text-center mb-20">
             <h2 className="text-4xl md:text-5xl font-serif font-bold text-stone-900 mb-4">
               Why Choose Serenica?
             </h2>
@@ -106,30 +106,114 @@ export default function Component() {
               Discover the perfect blend of ancient wisdom and modern technology for your meditation journey.
             </p>
           </div>
+          
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Feature 1 */}
-            <div className="bg-white p-8 rounded-3xl shadow-lg border border-stone-100 hover:shadow-xl transition-shadow duration-300">
-              <div className="w-12 h-12 bg-stone-100 rounded-full flex items-center justify-center mb-6">
-                <span className="text-2xl">🎯</span>
+            {/* AI-Powered Guidance */}
+            <div className="group bg-white p-8 rounded-3xl shadow-lg border border-stone-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+              <div className="relative mb-8">
+                <div className="w-16 h-16 bg-stone-900 rounded-2xl rotate-3 group-hover:rotate-6 transition-transform duration-300">
+                  <div className="absolute inset-0 flex items-center justify-center text-3xl">🎯</div>
+                </div>
+                <div className="absolute -bottom-4 -right-4 w-20 h-20 bg-stone-100 rounded-full opacity-50 group-hover:scale-110 transition-transform duration-300"></div>
               </div>
-              <h3 className="text-xl font-bold mb-3">Personalized Practice</h3>
-              <p className="text-stone-600">AI-driven recommendations that adapt to your progress and preferences.</p>
+              <h3 className="text-2xl font-bold mb-4 text-stone-900">AI-Powered Guidance</h3>
+              <p className="text-stone-600 leading-relaxed">Receive personalized recommendations and insights tailored to your meditation style, goals, and progress.</p>
+              <div className="mt-6 flex items-center text-stone-900 font-medium">
+                Learn more
+                <svg className="w-4 h-4 ml-2 group-hover:translate-x-2 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </div>
             </div>
-            {/* Feature 2 */}
-            <div className="bg-white p-8 rounded-3xl shadow-lg border border-stone-100 hover:shadow-xl transition-shadow duration-300">
-              <div className="w-12 h-12 bg-stone-100 rounded-full flex items-center justify-center mb-6">
-                <span className="text-2xl">🧠</span>
+
+            {/* Immersive Experience */}
+            <div className="group bg-white p-8 rounded-3xl shadow-lg border border-stone-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+              <div className="relative mb-8">
+                <div className="w-16 h-16 bg-stone-900 rounded-2xl rotate-3 group-hover:rotate-6 transition-transform duration-300">
+                  <div className="absolute inset-0 flex items-center justify-center text-3xl">🎧</div>
+                </div>
+                <div className="absolute -bottom-4 -right-4 w-20 h-20 bg-stone-100 rounded-full opacity-50 group-hover:scale-110 transition-transform duration-300"></div>
               </div>
-              <h3 className="text-xl font-bold mb-3">Guided Sessions</h3>
-              <p className="text-stone-600">Expert-led meditations for every experience level and goal.</p>
+              <h3 className="text-2xl font-bold mb-4 text-stone-900">Immersive Experience</h3>
+              <p className="text-stone-600 leading-relaxed">Dive deep into meditation with high-quality audio, ambient sounds, and guided visualizations.</p>
+              <div className="mt-6 flex items-center text-stone-900 font-medium">
+                Learn more
+                <svg className="w-4 h-4 ml-2 group-hover:translate-x-2 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </div>
             </div>
-            {/* Feature 3 */}
-            <div className="bg-white p-8 rounded-3xl shadow-lg border border-stone-100 hover:shadow-xl transition-shadow duration-300">
-              <div className="w-12 h-12 bg-stone-100 rounded-full flex items-center justify-center mb-6">
-                <span className="text-2xl">📊</span>
+
+            {/* Progress Tracking */}
+            <div className="group bg-white p-8 rounded-3xl shadow-lg border border-stone-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+              <div className="relative mb-8">
+                <div className="w-16 h-16 bg-stone-900 rounded-2xl rotate-3 group-hover:rotate-6 transition-transform duration-300">
+                  <div className="absolute inset-0 flex items-center justify-center text-3xl">📈</div>
+                </div>
+                <div className="absolute -bottom-4 -right-4 w-20 h-20 bg-stone-100 rounded-full opacity-50 group-hover:scale-110 transition-transform duration-300"></div>
               </div>
-              <h3 className="text-xl font-bold mb-3">Progress Tracking</h3>
-              <p className="text-stone-600">Visualize your mindfulness journey with detailed analytics.</p>
+              <h3 className="text-2xl font-bold mb-4 text-stone-900">Progress Tracking</h3>
+              <p className="text-stone-600 leading-relaxed">Monitor your mindfulness journey with detailed analytics, insights, and personalized progress reports.</p>
+              <div className="mt-6 flex items-center text-stone-900 font-medium">
+                Learn more
+                <svg className="w-4 h-4 ml-2 group-hover:translate-x-2 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </div>
+            </div>
+
+            {/* Expert-Led Sessions */}
+            <div className="group bg-white p-8 rounded-3xl shadow-lg border border-stone-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+              <div className="relative mb-8">
+                <div className="w-16 h-16 bg-stone-900 rounded-2xl rotate-3 group-hover:rotate-6 transition-transform duration-300">
+                  <div className="absolute inset-0 flex items-center justify-center text-3xl">👩‍🏫</div>
+                </div>
+                <div className="absolute -bottom-4 -right-4 w-20 h-20 bg-stone-100 rounded-full opacity-50 group-hover:scale-110 transition-transform duration-300"></div>
+              </div>
+              <h3 className="text-2xl font-bold mb-4 text-stone-900">Expert-Led Sessions</h3>
+              <p className="text-stone-600 leading-relaxed">Learn from certified meditation teachers and mindfulness experts through curated programs.</p>
+              <div className="mt-6 flex items-center text-stone-900 font-medium">
+                Learn more
+                <svg className="w-4 h-4 ml-2 group-hover:translate-x-2 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </div>
+            </div>
+
+            {/* Community Support */}
+            <div className="group bg-white p-8 rounded-3xl shadow-lg border border-stone-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+              <div className="relative mb-8">
+                <div className="w-16 h-16 bg-stone-900 rounded-2xl rotate-3 group-hover:rotate-6 transition-transform duration-300">
+                  <div className="absolute inset-0 flex items-center justify-center text-3xl">👥</div>
+                </div>
+                <div className="absolute -bottom-4 -right-4 w-20 h-20 bg-stone-100 rounded-full opacity-50 group-hover:scale-110 transition-transform duration-300"></div>
+              </div>
+              <h3 className="text-2xl font-bold mb-4 text-stone-900">Community Support</h3>
+              <p className="text-stone-600 leading-relaxed">Connect with like-minded individuals, share experiences, and grow together in your mindfulness practice.</p>
+              <div className="mt-6 flex items-center text-stone-900 font-medium">
+                Learn more
+                <svg className="w-4 h-4 ml-2 group-hover:translate-x-2 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </div>
+            </div>
+
+            {/* Flexible Schedule */}
+            <div className="group bg-white p-8 rounded-3xl shadow-lg border border-stone-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+              <div className="relative mb-8">
+                <div className="w-16 h-16 bg-stone-900 rounded-2xl rotate-3 group-hover:rotate-6 transition-transform duration-300">
+                  <div className="absolute inset-0 flex items-center justify-center text-3xl">⏰</div>
+                </div>
+                <div className="absolute -bottom-4 -right-4 w-20 h-20 bg-stone-100 rounded-full opacity-50 group-hover:scale-110 transition-transform duration-300"></div>
+              </div>
+              <h3 className="text-2xl font-bold mb-4 text-stone-900">Flexible Schedule</h3>
+              <p className="text-stone-600 leading-relaxed">Practice anytime, anywhere with sessions ranging from quick breaks to deep meditation experiences.</p>
+              <div className="mt-6 flex items-center text-stone-900 font-medium">
+                Learn more
+                <svg className="w-4 h-4 ml-2 group-hover:translate-x-2 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </div>
             </div>
           </div>
         </section>
