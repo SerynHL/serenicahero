@@ -188,7 +188,7 @@ export default function Component() {
             {/* Pro Plan */}
             <div className="bg-stone-900 p-8 rounded-3xl border-2 border-stone-700 text-white transform scale-105 shadow-2xl relative">
               <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                <span className="bg-stone-700 text-white text-sm font-medium px-4 py-1 rounded-full">
+                <span className="bg-black text-white text-sm font-bold px-6 py-2 rounded-full shadow-lg">
                   Most Popular
                 </span>
               </div>
