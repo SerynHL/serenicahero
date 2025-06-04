@@ -4,7 +4,7 @@ import Image from "next/image"
 
 export default function Component() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-stone-50">
       {/* Header */}
       <header className="bg-white/95 backdrop-blur-sm sticky top-0 z-50 border-b border-stone-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -53,9 +53,9 @@ export default function Component() {
         {/* Hero Section */}
         <section className="px-4 sm:px-6 lg:px-8 pt-8">
           <div className="max-w-[1400px] mx-auto">
-            <div className="relative min-h-[85vh] flex items-center justify-center overflow-hidden rounded-3xl border border-stone-200 shadow-xl">
+            <div className="relative min-h-[85vh] flex items-center justify-center overflow-hidden rounded-3xl border border-stone-200/50 shadow-2xl bg-gradient-to-b from-stone-900 to-stone-800">
               {/* Background Image */}
-              <div className="absolute inset-0 rounded-3xl">
+              <div className="absolute inset-0 rounded-3xl mix-blend-overlay opacity-50">
                 <Image
                   src="/meditation-hero.png"
                   alt="Person meditating in peaceful pose"
@@ -63,14 +63,12 @@ export default function Component() {
                   className="object-cover rounded-3xl"
                   priority
                 />
-                {/* Subtle overlay for text readability without changing image colors */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-black/10 rounded-3xl"></div>
               </div>
 
               {/* Content */}
               <div className="relative z-10 text-center max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Trust Badge */}
-                <div className="inline-flex items-center px-6 py-3 rounded-full bg-white/15 backdrop-blur-md border border-white/25 text-white/95 text-sm font-medium font-sans mb-6 shadow-lg">
+                <div className="inline-flex items-center px-6 py-3 rounded-full bg-white/10 backdrop-blur-md border border-white/10 text-white/95 text-sm font-medium font-sans mb-6">
                   <span className="mr-2">🧘‍♀️</span>
                   Trusted by 100,000+ mindful souls
                 </div>
@@ -88,7 +86,7 @@ export default function Component() {
                 <div className="flex justify-center">
                   <Button
                     size="lg"
-                    className="bg-white hover:bg-stone-50 text-stone-900 px-10 py-4 text-lg font-semibold font-sans rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 border-2 border-white"
+                    className="bg-white hover:bg-stone-50 text-stone-900 px-10 py-4 text-lg font-semibold font-sans rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105"
                   >
                     Start 7-day free trial
                   </Button>
@@ -101,7 +99,7 @@ export default function Component() {
         {/* Features Grid */}
         <section className="px-4 sm:px-6 lg:px-8">
           <div className="max-w-[1400px] mx-auto">
-            <div className="bg-stone-50 rounded-3xl border border-stone-200 shadow-xl overflow-hidden">
+            <div className="rounded-3xl border border-stone-200/50 shadow-2xl bg-white overflow-hidden">
               <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
                 <div className="text-center mb-16">
                   <h2 className="text-4xl font-serif font-bold text-stone-900 mb-4">Why Choose Serenica?</h2>
@@ -109,26 +107,26 @@ export default function Component() {
                     Discover the perfect blend of ancient wisdom and modern technology for your meditation journey.
                   </p>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                   {/* Feature 1 */}
-                  <div className="bg-white p-8 rounded-2xl shadow-lg border border-stone-200 transition-all duration-300 hover:shadow-xl">
-                    <div className="w-12 h-12 bg-stone-100 rounded-full flex items-center justify-center mb-6">
+                  <div className="bg-stone-50/50 p-8 rounded-2xl border border-stone-200/50 transition-all duration-300 hover:shadow-xl group">
+                    <div className="w-12 h-12 bg-stone-100 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                       <span className="text-2xl">🎯</span>
                     </div>
                     <h3 className="text-xl font-bold mb-3">Personalized Practice</h3>
                     <p className="text-stone-600">AI-driven recommendations that adapt to your progress and preferences.</p>
                   </div>
                   {/* Feature 2 */}
-                  <div className="bg-white p-8 rounded-2xl shadow-lg border border-stone-200 transition-all duration-300 hover:shadow-xl">
-                    <div className="w-12 h-12 bg-stone-100 rounded-full flex items-center justify-center mb-6">
+                  <div className="bg-stone-50/50 p-8 rounded-2xl border border-stone-200/50 transition-all duration-300 hover:shadow-xl group">
+                    <div className="w-12 h-12 bg-stone-100 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                       <span className="text-2xl">🧠</span>
                     </div>
                     <h3 className="text-xl font-bold mb-3">Guided Sessions</h3>
                     <p className="text-stone-600">Expert-led meditations for every experience level and goal.</p>
                   </div>
                   {/* Feature 3 */}
-                  <div className="bg-white p-8 rounded-2xl shadow-lg border border-stone-200 transition-all duration-300 hover:shadow-xl">
-                    <div className="w-12 h-12 bg-stone-100 rounded-full flex items-center justify-center mb-6">
+                  <div className="bg-stone-50/50 p-8 rounded-2xl border border-stone-200/50 transition-all duration-300 hover:shadow-xl group">
+                    <div className="w-12 h-12 bg-stone-100 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                       <span className="text-2xl">📊</span>
                     </div>
                     <h3 className="text-xl font-bold mb-3">Progress Tracking</h3>
@@ -143,23 +141,23 @@ export default function Component() {
         {/* Pricing Section */}
         <section className="px-4 sm:px-6 lg:px-8">
           <div className="max-w-[1400px] mx-auto">
-            <div className="bg-white rounded-3xl border border-stone-200 shadow-xl overflow-hidden">
+            <div className="rounded-3xl border border-stone-200/50 shadow-2xl bg-gradient-to-b from-stone-900 to-stone-800 overflow-hidden">
               <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
                 <div className="text-center mb-16">
-                  <h2 className="text-4xl font-serif font-bold text-stone-900 mb-4">Simple, Transparent Pricing</h2>
-                  <p className="text-lg text-stone-600 max-w-2xl mx-auto">
+                  <h2 className="text-4xl font-serif font-bold text-white mb-4">Simple, Transparent Pricing</h2>
+                  <p className="text-lg text-stone-300 max-w-2xl mx-auto">
                     Choose the perfect plan for your meditation journey.
                   </p>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                   {/* Basic Plan */}
-                  <div className="bg-white p-8 rounded-2xl shadow-lg border border-stone-200 transition-all duration-300 hover:shadow-xl">
+                  <div className="bg-white/5 backdrop-blur-xl p-8 rounded-2xl border border-white/10 transition-all duration-300 hover:shadow-2xl text-white">
                     <h3 className="text-xl font-bold mb-2">Basic</h3>
                     <div className="mb-6">
                       <span className="text-4xl font-bold">$9</span>
-                      <span className="text-stone-600">/month</span>
+                      <span className="text-stone-300">/month</span>
                     </div>
-                    <ul className="space-y-4 mb-8">
+                    <ul className="space-y-4 mb-8 text-stone-300">
                       <li className="flex items-center">
                         <span className="mr-2">✓</span>
                         Basic guided meditations
@@ -173,18 +171,18 @@ export default function Component() {
                         5 meditation programs
                       </li>
                     </ul>
-                    <Button className="w-full bg-stone-100 hover:bg-stone-200 text-stone-900">
+                    <Button className="w-full bg-white hover:bg-stone-100 text-stone-900">
                       Get Started
                     </Button>
                   </div>
                   {/* Pro Plan */}
-                  <div className="bg-stone-900 p-8 rounded-2xl shadow-xl border border-stone-700 text-white transform scale-105">
+                  <div className="bg-white p-8 rounded-2xl border border-stone-200 shadow-2xl transform scale-105">
                     <h3 className="text-xl font-bold mb-2">Pro</h3>
                     <div className="mb-6">
                       <span className="text-4xl font-bold">$19</span>
-                      <span className="text-stone-300">/month</span>
+                      <span className="text-stone-600">/month</span>
                     </div>
-                    <ul className="space-y-4 mb-8">
+                    <ul className="space-y-4 mb-8 text-stone-600">
                       <li className="flex items-center">
                         <span className="mr-2">✓</span>
                         All Basic features
@@ -202,18 +200,18 @@ export default function Component() {
                         Advanced analytics
                       </li>
                     </ul>
-                    <Button className="w-full bg-white hover:bg-stone-100 text-stone-900">
+                    <Button className="w-full bg-stone-900 hover:bg-stone-800 text-white">
                       Get Started
                     </Button>
                   </div>
                   {/* Enterprise Plan */}
-                  <div className="bg-white p-8 rounded-2xl shadow-lg border border-stone-200 transition-all duration-300 hover:shadow-xl">
+                  <div className="bg-white/5 backdrop-blur-xl p-8 rounded-2xl border border-white/10 transition-all duration-300 hover:shadow-2xl text-white">
                     <h3 className="text-xl font-bold mb-2">Enterprise</h3>
                     <div className="mb-6">
                       <span className="text-4xl font-bold">$49</span>
-                      <span className="text-stone-600">/month</span>
+                      <span className="text-stone-300">/month</span>
                     </div>
-                    <ul className="space-y-4 mb-8">
+                    <ul className="space-y-4 mb-8 text-stone-300">
                       <li className="flex items-center">
                         <span className="mr-2">✓</span>
                         All Pro features
@@ -231,7 +229,7 @@ export default function Component() {
                         Team management
                       </li>
                     </ul>
-                    <Button className="w-full bg-stone-100 hover:bg-stone-200 text-stone-900">
+                    <Button className="w-full bg-white hover:bg-stone-100 text-stone-900">
                       Contact Sales
                     </Button>
                   </div>
@@ -244,7 +242,7 @@ export default function Component() {
         {/* Testimonials */}
         <section className="px-4 sm:px-6 lg:px-8">
           <div className="max-w-[1400px] mx-auto">
-            <div className="bg-stone-50 rounded-3xl border border-stone-200 shadow-xl overflow-hidden">
+            <div className="rounded-3xl border border-stone-200/50 shadow-2xl bg-white overflow-hidden">
               <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
                 <div className="text-center mb-16">
                   <h2 className="text-4xl font-serif font-bold text-stone-900 mb-4">What Our Users Say</h2>
@@ -254,7 +252,7 @@ export default function Component() {
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                   {/* Testimonial 1 */}
-                  <div className="bg-white p-8 rounded-2xl shadow-lg border border-stone-200 transition-all duration-300 hover:shadow-xl">
+                  <div className="bg-stone-50/50 p-8 rounded-2xl border border-stone-200/50 transition-all duration-300 hover:shadow-xl">
                     <div className="flex items-center mb-6">
                       <div className="w-12 h-12 bg-stone-200 rounded-full mr-4"></div>
                       <div>
@@ -267,7 +265,7 @@ export default function Component() {
                     </p>
                   </div>
                   {/* Testimonial 2 */}
-                  <div className="bg-white p-8 rounded-2xl shadow-lg border border-stone-200 transition-all duration-300 hover:shadow-xl">
+                  <div className="bg-stone-50/50 p-8 rounded-2xl border border-stone-200/50 transition-all duration-300 hover:shadow-xl">
                     <div className="flex items-center mb-6">
                       <div className="w-12 h-12 bg-stone-200 rounded-full mr-4"></div>
                       <div>
@@ -280,7 +278,7 @@ export default function Component() {
                     </p>
                   </div>
                   {/* Testimonial 3 */}
-                  <div className="bg-white p-8 rounded-2xl shadow-lg border border-stone-200 transition-all duration-300 hover:shadow-xl">
+                  <div className="bg-stone-50/50 p-8 rounded-2xl border border-stone-200/50 transition-all duration-300 hover:shadow-xl">
                     <div className="flex items-center mb-6">
                       <div className="w-12 h-12 bg-stone-200 rounded-full mr-4"></div>
                       <div>
@@ -300,7 +298,7 @@ export default function Component() {
       </main>
 
       {/* Footer */}
-      <footer className="bg-stone-900 text-white rounded-t-3xl border-t border-stone-800">
+      <footer className="bg-stone-900 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
             {/* Brand */}
