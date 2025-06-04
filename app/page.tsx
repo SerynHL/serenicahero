@@ -49,9 +49,9 @@ export default function Component() {
         </div>
       </header>
 
-      {/* Hero Section */}
-      <section className="relative px-4 sm:px-6 lg:px-8 py-2">
-        <div className="max-w-full mx-auto">
+      <div className="max-w-7xl mx-auto">
+        {/* Hero Section */}
+        <section className="px-4 sm:px-6 lg:px-8 py-2">
           <div className="relative min-h-[85vh] flex items-center justify-center overflow-hidden rounded-3xl border border-stone-200 shadow-2xl">
             {/* Background Image */}
             <div className="absolute inset-0 rounded-3xl">
@@ -94,12 +94,10 @@ export default function Component() {
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Features Grid */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white to-stone-50 rounded-[3rem]">
-        <div className="max-w-7xl mx-auto">
+        {/* Features Grid */}
+        <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white to-stone-50 rounded-[3rem]">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-serif font-bold text-stone-900 mb-4">
               Why Choose Serenica?
@@ -134,12 +132,10 @@ export default function Component() {
               <p className="text-stone-600">Visualize your mindfulness journey with detailed analytics.</p>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Pricing Section */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 rounded-[3rem]">
-        <div className="max-w-7xl mx-auto">
+        {/* Pricing Section */}
+        <section className="py-24 px-4 sm:px-6 lg:px-8 rounded-[3rem]">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-serif font-bold text-stone-900 mb-4">
               Simple, Transparent Pricing
@@ -238,12 +234,10 @@ export default function Component() {
               </Button>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Testimonials */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-stone-50 to-white rounded-[3rem]">
-        <div className="max-w-7xl mx-auto">
+        {/* Testimonials */}
+        <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-stone-50 to-white rounded-[3rem]">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-serif font-bold text-stone-900 mb-4">
               What Our Users Say
@@ -311,11 +305,11 @@ export default function Component() {
               </p>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </div>
 
       {/* Footer */}
-      <footer className="bg-stone-900 text-white py-16 px-4 sm:px-6 lg:px-8 rounded-t-[3rem]">
+      <footer className="bg-stone-900 text-white py-16 px-4 sm:px-6 lg:px-8 mt-24 rounded-t-[3rem]">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
             {/* Brand */}
