@@ -7,7 +7,7 @@ export default function Component() {
     <div className="min-h-screen bg-white">
       {/* Header */}
       <header className="bg-white/95 backdrop-blur-sm sticky top-0 z-50 border-b border-stone-100">
-        <div className="max-w-5xl mx-auto px-4">
+        <div className="max-w-4xl mx-auto px-2">
           <div className="flex justify-between items-center h-20">
             {/* Logo */}
             <div className="flex items-center space-x-3">
@@ -49,7 +49,7 @@ export default function Component() {
         </div>
       </header>
 
-      <div className="max-w-5xl mx-auto px-4">
+      <div className="max-w-4xl mx-auto px-2">
         {/* Hero Section */}
         <section className="py-6">
           <div className="relative min-h-[75vh] flex items-center justify-center overflow-hidden rounded-2xl border border-stone-200 shadow-2xl">
@@ -310,7 +310,7 @@ export default function Component() {
 
       {/* Footer */}
       <footer className="bg-stone-900 text-white py-12 mt-12 rounded-t-2xl">
-        <div className="max-w-5xl mx-auto px-4">
+        <div className="max-w-4xl mx-auto px-2">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
             {/* Brand */}
             <div className="space-y-4">
