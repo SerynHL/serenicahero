@@ -79,9 +79,9 @@ export default function Component() {
                 Find your inner calm.
               </h1>
 
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif text-white/90 mb-12 leading-tight">
+              <p className="text-lg md:text-xl text-white/90 mb-12 max-w-2xl mx-auto leading-relaxed font-sans">
                 Experience personalized meditation sessions powered by AI.
-              </h2>
+              </p>
 
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
