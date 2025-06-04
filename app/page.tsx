@@ -7,7 +7,7 @@ export default function Component() {
     <div className="min-h-screen bg-white">
       {/* Header */}
       <header className="bg-white/95 backdrop-blur-sm sticky top-0 z-50 border-b border-stone-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
             {/* Logo */}
             <div className="flex items-center space-x-3">
@@ -49,10 +49,10 @@ export default function Component() {
         </div>
       </header>
 
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Hero Section */}
-        <section className="px-4 sm:px-6 lg:px-8 py-2">
-          <div className="relative min-h-[85vh] flex items-center justify-center overflow-hidden rounded-3xl border border-stone-200 shadow-2xl">
+        <section className="py-8">
+          <div className="relative min-h-[75vh] flex items-center justify-center overflow-hidden rounded-3xl border border-stone-200 shadow-2xl">
             {/* Background Image */}
             <div className="absolute inset-0 rounded-3xl">
               <Image
@@ -97,8 +97,8 @@ export default function Component() {
         </section>
 
         {/* Features Grid */}
-        <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white to-stone-50 rounded-[3rem]">
-          <div className="text-center mb-16">
+        <section className="py-16 bg-gradient-to-b from-white to-stone-50 rounded-3xl">
+          <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-serif font-bold text-stone-900 mb-4">
               Why Choose Serenica?
             </h2>
@@ -106,9 +106,9 @@ export default function Component() {
               Discover the perfect blend of ancient wisdom and modern technology for your meditation journey.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {/* Feature 1 */}
-            <div className="bg-white p-8 rounded-3xl shadow-lg border border-stone-100 hover:shadow-xl transition-shadow duration-300">
+            <div className="bg-white p-8 rounded-2xl shadow-lg border border-stone-100 hover:shadow-xl transition-shadow duration-300">
               <div className="w-12 h-12 bg-stone-100 rounded-full flex items-center justify-center mb-6">
                 <span className="text-2xl">🎯</span>
               </div>
@@ -116,7 +116,7 @@ export default function Component() {
               <p className="text-stone-600">AI-driven recommendations that adapt to your progress and preferences.</p>
             </div>
             {/* Feature 2 */}
-            <div className="bg-white p-8 rounded-3xl shadow-lg border border-stone-100 hover:shadow-xl transition-shadow duration-300">
+            <div className="bg-white p-8 rounded-2xl shadow-lg border border-stone-100 hover:shadow-xl transition-shadow duration-300">
               <div className="w-12 h-12 bg-stone-100 rounded-full flex items-center justify-center mb-6">
                 <span className="text-2xl">🧠</span>
               </div>
@@ -124,7 +124,7 @@ export default function Component() {
               <p className="text-stone-600">Expert-led meditations for every experience level and goal.</p>
             </div>
             {/* Feature 3 */}
-            <div className="bg-white p-8 rounded-3xl shadow-lg border border-stone-100 hover:shadow-xl transition-shadow duration-300">
+            <div className="bg-white p-8 rounded-2xl shadow-lg border border-stone-100 hover:shadow-xl transition-shadow duration-300">
               <div className="w-12 h-12 bg-stone-100 rounded-full flex items-center justify-center mb-6">
                 <span className="text-2xl">📊</span>
               </div>
@@ -135,8 +135,8 @@ export default function Component() {
         </section>
 
         {/* Pricing Section */}
-        <section className="py-24 px-4 sm:px-6 lg:px-8 rounded-[3rem]">
-          <div className="text-center mb-16">
+        <section className="py-16 rounded-3xl">
+          <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-serif font-bold text-stone-900 mb-4">
               Simple, Transparent Pricing
             </h2>
@@ -144,9 +144,9 @@ export default function Component() {
               Choose the perfect plan for your meditation journey.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {/* Basic Plan */}
-            <div className="bg-white p-8 rounded-3xl border border-stone-200 hover:border-stone-300 transition-colors">
+            <div className="bg-white p-8 rounded-2xl border border-stone-200 hover:border-stone-300 transition-colors">
               <h3 className="text-xl font-bold mb-2">Basic</h3>
               <div className="mb-6">
                 <span className="text-4xl font-bold">$9</span>
@@ -166,12 +166,12 @@ export default function Component() {
                   5 meditation programs
                 </li>
               </ul>
-              <Button className="w-full bg-stone-100 hover:bg-stone-200 text-stone-900 rounded-2xl">
+              <Button className="w-full bg-stone-100 hover:bg-stone-200 text-stone-900 rounded-xl">
                 Get Started
               </Button>
             </div>
             {/* Pro Plan */}
-            <div className="bg-stone-900 p-8 rounded-3xl border-2 border-stone-700 text-white transform scale-105 shadow-2xl relative">
+            <div className="bg-stone-900 p-8 rounded-2xl border-2 border-stone-700 text-white transform scale-105 shadow-xl relative">
               <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
                 <span className="bg-stone-700 text-white text-sm font-medium px-4 py-1 rounded-full">
                   Most Popular
@@ -200,12 +200,12 @@ export default function Component() {
                   Advanced analytics
                 </li>
               </ul>
-              <Button className="w-full bg-white hover:bg-stone-100 text-stone-900 rounded-2xl">
+              <Button className="w-full bg-white hover:bg-stone-100 text-stone-900 rounded-xl">
                 Get Started
               </Button>
             </div>
             {/* Enterprise Plan */}
-            <div className="bg-white p-8 rounded-3xl border border-stone-200 hover:border-stone-300 transition-colors">
+            <div className="bg-white p-8 rounded-2xl border border-stone-200 hover:border-stone-300 transition-colors">
               <h3 className="text-xl font-bold mb-2">Enterprise</h3>
               <div className="mb-6">
                 <span className="text-4xl font-bold">$49</span>
@@ -229,7 +229,7 @@ export default function Component() {
                   Team management
                 </li>
               </ul>
-              <Button className="w-full bg-stone-100 hover:bg-stone-200 text-stone-900 rounded-2xl">
+              <Button className="w-full bg-stone-100 hover:bg-stone-200 text-stone-900 rounded-xl">
                 Contact Sales
               </Button>
             </div>
@@ -237,8 +237,8 @@ export default function Component() {
         </section>
 
         {/* Testimonials */}
-        <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-stone-50 to-white rounded-[3rem]">
-          <div className="text-center mb-16">
+        <section className="py-16 bg-gradient-to-b from-stone-50 to-white rounded-3xl">
+          <div className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-serif font-bold text-stone-900 mb-4">
               What Our Users Say
             </h2>
@@ -246,9 +246,9 @@ export default function Component() {
               Join thousands of satisfied meditators on their journey to mindfulness.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {/* Testimonial 1 */}
-            <div className="bg-white p-8 rounded-3xl shadow-lg border border-stone-100 hover:shadow-xl transition-shadow duration-300">
+            <div className="bg-white p-8 rounded-2xl shadow-lg border border-stone-100 hover:shadow-xl transition-shadow duration-300">
               <div className="flex items-center mb-6">
                 <Image
                   src="https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg"
@@ -267,7 +267,7 @@ export default function Component() {
               </p>
             </div>
             {/* Testimonial 2 */}
-            <div className="bg-white p-8 rounded-3xl shadow-lg border border-stone-100 hover:shadow-xl transition-shadow duration-300">
+            <div className="bg-white p-8 rounded-2xl shadow-lg border border-stone-100 hover:shadow-xl transition-shadow duration-300">
               <div className="flex items-center mb-6">
                 <Image
                   src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg"
@@ -286,7 +286,7 @@ export default function Component() {
               </p>
             </div>
             {/* Testimonial 3 */}
-            <div className="bg-white p-8 rounded-3xl shadow-lg border border-stone-100 hover:shadow-xl transition-shadow duration-300">
+            <div className="bg-white p-8 rounded-2xl shadow-lg border border-stone-100 hover:shadow-xl transition-shadow duration-300">
               <div className="flex items-center mb-6">
                 <Image
                   src="https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg"
@@ -309,9 +309,9 @@ export default function Component() {
       </div>
 
       {/* Footer */}
-      <footer className="bg-stone-900 text-white py-16 px-4 sm:px-6 lg:px-8 mt-24 rounded-t-[3rem]">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
+      <footer className="bg-stone-900 text-white py-16 mt-16 rounded-t-3xl">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             {/* Brand */}
             <div className="space-y-4">
               <div className="flex items-center space-x-3">
