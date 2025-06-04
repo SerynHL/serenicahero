@@ -6,7 +6,7 @@ export default function Component() {
   return (
     <div className="min-h-screen bg-white">
       {/* Header */}
-      <header className="bg-white/95 backdrop-blur-sm sticky top-0 z-50 border-b border-stone-100">
+      <header className="bg-white/95 backdrop-blur-sm sticky top-0 z-50">
         <div className="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
             {/* Logo */}
