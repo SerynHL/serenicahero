@@ -67,19 +67,19 @@ export default function Component() {
             </div>
 
             {/* Content */}
-            <div className="relative z-10 text-center max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="relative z-10 text-center max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
               {/* Trust Badge */}
-              <div className="inline-flex items-center px-6 py-3 rounded-full bg-white/15 backdrop-blur-md border border-white/25 text-white/95 text-sm font-medium font-sans mb-10 shadow-lg">
+              <div className="inline-flex items-center px-6 py-3 rounded-full bg-white/15 backdrop-blur-md border border-white/25 text-white/95 text-sm font-medium font-sans mb-6">
                 <span className="mr-2">🧘‍♀️</span>
                 Trusted by 100,000+ mindful souls
               </div>
 
               {/* Main Headline */}
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif text-white mb-8 leading-[1.1]">
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif text-white mb-4 leading-[1.1]">
                 Find your inner calm.
               </h1>
 
-              <p className="text-lg md:text-xl text-white/90 mb-16 max-w-2xl mx-auto leading-relaxed font-sans">
+              <p className="text-lg md:text-xl text-white/90 mb-8 max-w-2xl mx-auto leading-relaxed font-sans">
                 Experience personalized meditation sessions powered by AI.
               </p>
 
