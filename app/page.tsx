@@ -54,16 +54,16 @@ export default function Component() {
         <div className="max-w-full mx-auto">
           <div className="relative min-h-[85vh] flex items-center justify-center overflow-hidden rounded-3xl border border-stone-200 shadow-2xl">
             {/* Background Image */}
-            <div className="absolute inset-0 rounded-2xl">
+            <div className="absolute inset-0 rounded-3xl">
               <Image
                 src="/meditation-hero.png"
                 alt="Person meditating in peaceful pose"
                 fill
-                className="object-cover rounded-2xl"
+                className="object-cover rounded-3xl"
                 priority
               />
               {/* Subtle overlay for text readability without changing image colors */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-black/10 rounded-2xl"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-black/10 rounded-3xl"></div>
             </div>
 
             {/* Content */}
@@ -98,7 +98,7 @@ export default function Component() {
       </section>
 
       {/* Features Grid */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white to-stone-50">
+      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white to-stone-50 rounded-[3rem]">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-serif font-bold text-stone-900 mb-4">
@@ -110,7 +110,7 @@ export default function Component() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Feature 1 */}
-            <div className="bg-white p-8 rounded-2xl shadow-lg border border-stone-100 hover:shadow-xl transition-shadow duration-300">
+            <div className="bg-white p-8 rounded-3xl shadow-lg border border-stone-100 hover:shadow-xl transition-shadow duration-300">
               <div className="w-12 h-12 bg-stone-100 rounded-full flex items-center justify-center mb-6">
                 <span className="text-2xl">🎯</span>
               </div>
@@ -118,7 +118,7 @@ export default function Component() {
               <p className="text-stone-600">AI-driven recommendations that adapt to your progress and preferences.</p>
             </div>
             {/* Feature 2 */}
-            <div className="bg-white p-8 rounded-2xl shadow-lg border border-stone-100 hover:shadow-xl transition-shadow duration-300">
+            <div className="bg-white p-8 rounded-3xl shadow-lg border border-stone-100 hover:shadow-xl transition-shadow duration-300">
               <div className="w-12 h-12 bg-stone-100 rounded-full flex items-center justify-center mb-6">
                 <span className="text-2xl">🧠</span>
               </div>
@@ -126,7 +126,7 @@ export default function Component() {
               <p className="text-stone-600">Expert-led meditations for every experience level and goal.</p>
             </div>
             {/* Feature 3 */}
-            <div className="bg-white p-8 rounded-2xl shadow-lg border border-stone-100 hover:shadow-xl transition-shadow duration-300">
+            <div className="bg-white p-8 rounded-3xl shadow-lg border border-stone-100 hover:shadow-xl transition-shadow duration-300">
               <div className="w-12 h-12 bg-stone-100 rounded-full flex items-center justify-center mb-6">
                 <span className="text-2xl">📊</span>
               </div>
@@ -138,7 +138,7 @@ export default function Component() {
       </section>
 
       {/* Pricing Section */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8">
+      <section className="py-24 px-4 sm:px-6 lg:px-8 rounded-[3rem]">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-serif font-bold text-stone-900 mb-4">
@@ -150,7 +150,7 @@ export default function Component() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Basic Plan */}
-            <div className="bg-white p-8 rounded-2xl border border-stone-200 hover:border-stone-300 transition-colors">
+            <div className="bg-white p-8 rounded-3xl border border-stone-200 hover:border-stone-300 transition-colors">
               <h3 className="text-xl font-bold mb-2">Basic</h3>
               <div className="mb-6">
                 <span className="text-4xl font-bold">$9</span>
@@ -170,12 +170,12 @@ export default function Component() {
                   5 meditation programs
                 </li>
               </ul>
-              <Button className="w-full bg-stone-100 hover:bg-stone-200 text-stone-900">
+              <Button className="w-full bg-stone-100 hover:bg-stone-200 text-stone-900 rounded-2xl">
                 Get Started
               </Button>
             </div>
             {/* Pro Plan */}
-            <div className="bg-stone-900 p-8 rounded-2xl border-2 border-stone-700 text-white transform scale-105 shadow-2xl relative">
+            <div className="bg-stone-900 p-8 rounded-3xl border-2 border-stone-700 text-white transform scale-105 shadow-2xl relative">
               <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
                 <span className="bg-stone-700 text-white text-sm font-medium px-4 py-1 rounded-full">
                   Most Popular
@@ -204,12 +204,12 @@ export default function Component() {
                   Advanced analytics
                 </li>
               </ul>
-              <Button className="w-full bg-white hover:bg-stone-100 text-stone-900">
+              <Button className="w-full bg-white hover:bg-stone-100 text-stone-900 rounded-2xl">
                 Get Started
               </Button>
             </div>
             {/* Enterprise Plan */}
-            <div className="bg-white p-8 rounded-2xl border border-stone-200 hover:border-stone-300 transition-colors">
+            <div className="bg-white p-8 rounded-3xl border border-stone-200 hover:border-stone-300 transition-colors">
               <h3 className="text-xl font-bold mb-2">Enterprise</h3>
               <div className="mb-6">
                 <span className="text-4xl font-bold">$49</span>
@@ -233,7 +233,7 @@ export default function Component() {
                   Team management
                 </li>
               </ul>
-              <Button className="w-full bg-stone-100 hover:bg-stone-200 text-stone-900">
+              <Button className="w-full bg-stone-100 hover:bg-stone-200 text-stone-900 rounded-2xl">
                 Contact Sales
               </Button>
             </div>
@@ -242,7 +242,7 @@ export default function Component() {
       </section>
 
       {/* Testimonials */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-stone-50 to-white">
+      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-stone-50 to-white rounded-[3rem]">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-serif font-bold text-stone-900 mb-4">
@@ -254,7 +254,7 @@ export default function Component() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Testimonial 1 */}
-            <div className="bg-white p-8 rounded-2xl shadow-lg border border-stone-100 hover:shadow-xl transition-shadow duration-300">
+            <div className="bg-white p-8 rounded-3xl shadow-lg border border-stone-100 hover:shadow-xl transition-shadow duration-300">
               <div className="flex items-center mb-6">
                 <Image
                   src="https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg"
@@ -273,7 +273,7 @@ export default function Component() {
               </p>
             </div>
             {/* Testimonial 2 */}
-            <div className="bg-white p-8 rounded-2xl shadow-lg border border-stone-100 hover:shadow-xl transition-shadow duration-300">
+            <div className="bg-white p-8 rounded-3xl shadow-lg border border-stone-100 hover:shadow-xl transition-shadow duration-300">
               <div className="flex items-center mb-6">
                 <Image
                   src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg"
@@ -292,7 +292,7 @@ export default function Component() {
               </p>
             </div>
             {/* Testimonial 3 */}
-            <div className="bg-white p-8 rounded-2xl shadow-lg border border-stone-100 hover:shadow-xl transition-shadow duration-300">
+            <div className="bg-white p-8 rounded-3xl shadow-lg border border-stone-100 hover:shadow-xl transition-shadow duration-300">
               <div className="flex items-center mb-6">
                 <Image
                   src="https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg"
@@ -315,7 +315,7 @@ export default function Component() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-stone-900 text-white py-16 px-4 sm:px-6 lg:px-8">
+      <footer className="bg-stone-900 text-white py-16 px-4 sm:px-6 lg:px-8 rounded-t-[3rem]">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
             {/* Brand */}
