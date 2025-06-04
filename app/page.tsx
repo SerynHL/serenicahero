@@ -75,16 +75,16 @@ export default function Component() {
               </div>
 
               {/* Main Headline */}
-              <h1 className="text-5xl md:text-6xl lg:text-8xl font-serif text-white mb-8 leading-[0.9] tracking-tight">
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif text-white mb-8 leading-[1.1]">
                 Find your inner calm.
               </h1>
 
-              <p className="text-lg md:text-xl text-white/90 mb-12 max-w-2xl mx-auto leading-relaxed font-sans">
+              <p className="text-lg md:text-xl text-white/90 mb-16 max-w-2xl mx-auto leading-relaxed font-sans">
                 Experience personalized meditation sessions powered by AI.
               </p>
 
-              {/* CTA Buttons */}
-              <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+              {/* CTA Button */}
+              <div className="flex justify-center">
                 <Button
                   size="lg"
                   className="bg-white hover:bg-stone-50 text-stone-900 px-10 py-4 text-lg font-semibold font-sans rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 border-2 border-white"
