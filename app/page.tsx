@@ -98,7 +98,7 @@ export default function Component() {
       </section>
 
       {/* Features Grid */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-stone-50">
+      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-stone-50 rounded-2xl border border-stone-200 shadow-lg mx-4 sm:mx-6 lg:mx-8 my-8">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-serif font-bold text-stone-900 mb-4">Why Choose Serenica?</h2>
