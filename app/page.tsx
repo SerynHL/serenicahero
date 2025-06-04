@@ -3,9 +3,22 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
-import { motion } from "framer-motion"
+import { motion, useScroll, useTransform, useSpring, useInView } from "framer-motion"
+import { useRef } from "react"
 
 export default function Component() {
+  const ref = useRef(null)
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start start", "end end"]
+  })
+
+  const scaleProgress = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001
+  })
+
   const cardVariants = {
     offscreen: {
       y: 50,
@@ -42,54 +55,130 @@ export default function Component() {
     }
   }
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        delayChildren: 0.3,
+        staggerChildren: 0.2
+      }
+    }
+  }
+
+  const itemVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        type: "spring",
+        stiffness: 100
+      }
+    }
+  }
+
+  const navVariants = {
+    hidden: { y: -100 },
+    visible: {
+      y: 0,
+      transition: {
+        type: "spring",
+        stiffness: 100,
+        damping: 20
+      }
+    }
+  }
+
+  const heroVariants = {
+    hidden: { scale: 0.8, opacity: 0 },
+    visible: {
+      scale: 1,
+      opacity: 1,
+      transition: {
+        type: "spring",
+        stiffness: 100,
+        damping: 20,
+        duration: 0.8
+      }
+    }
+  }
+
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white" ref={ref}>
       {/* Header */}
-      <header className="bg-white/95 backdrop-blur-sm sticky top-0 z-50">
+      <motion.header 
+        initial="hidden"
+        animate="visible"
+        variants={navVariants}
+        className="bg-white/95 backdrop-blur-sm sticky top-0 z-50"
+      >
         <div className="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
             {/* Logo */}
-            <div className="flex items-center space-x-3">
+            <motion.div 
+              className="flex items-center space-x-3"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
               <div className="w-10 h-10 bg-gradient-to-br from-stone-700 to-stone-900 rounded-full flex items-center justify-center shadow-lg">
                 <span className="text-white text-lg font-serif font-bold">S</span>
               </div>
               <span className="text-2xl font-serif font-bold text-stone-900">Serenica</span>
-            </div>
+            </motion.div>
 
             {/* Navigation */}
-            <nav className="hidden md:flex items-center space-x-10">
-              <Link href="#" className="text-stone-900 hover:text-stone-600 font-medium font-sans transition-colors">
-                Home
-              </Link>
-              <Link href="#" className="text-stone-600 hover:text-stone-900 font-sans transition-colors">
-                Meditations
-              </Link>
-              <Link href="#" className="text-stone-600 hover:text-stone-900 font-sans transition-colors">
-                Programs
-              </Link>
-              <Link href="#" className="text-stone-600 hover:text-stone-900 font-sans transition-colors">
-                About
-              </Link>
-              <Link href="#" className="text-stone-600 hover:text-stone-900 font-sans transition-colors">
-                Support
-              </Link>
-            </nav>
+            <motion.nav 
+              className="hidden md:flex items-center space-x-10"
+              variants={containerVariants}
+              initial="hidden"
+              animate="visible"
+            >
+              {["Home", "Meditations", "Programs", "About", "Support"].map((item, index) => (
+                <motion.div key={item} variants={itemVariants}>
+                  <Link 
+                    href="#" 
+                    className={`${item === 'Home' ? 'text-stone-900' : 'text-stone-600'} hover:text-stone-900 font-sans transition-colors`}
+                  >
+                    {item}
+                  </Link>
+                </motion.div>
+              ))}
+            </motion.nav>
 
             {/* CTA Buttons */}
-            <div className="flex items-center space-x-4">
-              <Link href="#" className="text-stone-600 hover:text-stone-900 font-medium font-sans transition-colors">
-                Sign In
-              </Link>
-              <Button className="bg-stone-900 hover:bg-stone-800 text-white px-6 py-2.5 rounded-full font-medium font-sans shadow-lg hover:shadow-xl transition-all duration-200">
-                Get Started
-              </Button>
-            </div>
+            <motion.div 
+              className="flex items-center space-x-4"
+              variants={containerVariants}
+              initial="hidden"
+              animate="visible"
+            >
+              <motion.div variants={itemVariants}>
+                <Link href="#" className="text-stone-600 hover:text-stone-900 font-medium font-sans transition-colors">
+                  Sign In
+                </Link>
+              </motion.div>
+              <motion.div 
+                variants={itemVariants}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <Button className="bg-stone-900 hover:bg-stone-800 text-white px-6 py-2.5 rounded-full font-medium font-sans shadow-lg hover:shadow-xl transition-all duration-200">
+                  Get Started
+                </Button>
+              </motion.div>
+            </motion.div>
           </div>
         </div>
-      </header>
+      </motion.header>
 
       {/* Hero Section */}
-      <div className="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8 py-2">
+      <motion.div 
+        initial="hidden"
+        animate="visible"
+        variants={heroVariants}
+        className="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8 py-2"
+      >
         <div className="relative min-h-[85vh] flex items-center justify-center overflow-hidden rounded-3xl border border-stone-200 shadow-2xl">
           {/* Background Image */}
           <div className="absolute inset-0 rounded-3xl">
@@ -105,34 +194,51 @@ export default function Component() {
           </div>
 
           {/* Content */}
-          <div className="relative z-10 text-center max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div 
+            className="relative z-10 text-center max-w-4xl mx-auto px-4 sm:px-6 lg:px-8"
+            variants={containerVariants}
+          >
             {/* Trust Badge */}
-            <div className="inline-flex items-center px-6 py-3 rounded-full bg-white/15 backdrop-blur-md border border-white/25 text-white/95 text-sm font-medium font-sans mb-6">
+            <motion.div 
+              variants={itemVariants}
+              className="inline-flex items-center px-6 py-3 rounded-full bg-white/15 backdrop-blur-md border border-white/25 text-white/95 text-sm font-medium font-sans mb-6"
+            >
               <span className="mr-2">🧘‍♀️</span>
               Trusted by 100,000+ mindful souls
-            </div>
+            </motion.div>
 
             {/* Main Headline */}
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif text-white mb-4 leading-[1.1]">
+            <motion.h1 
+              variants={itemVariants}
+              className="text-5xl md:text-6xl lg:text-7xl font-serif text-white mb-4 leading-[1.1]"
+            >
               Find your inner calm.
-            </h1>
+            </motion.h1>
 
-            <p className="text-lg md:text-xl text-white/90 mb-8 max-w-2xl mx-auto leading-relaxed font-sans">
+            <motion.p 
+              variants={itemVariants}
+              className="text-lg md:text-xl text-white/90 mb-8 max-w-2xl mx-auto leading-relaxed font-sans"
+            >
               Experience personalized meditation sessions powered by AI.
-            </p>
+            </motion.p>
 
             {/* CTA Button */}
-            <div className="flex justify-center">
+            <motion.div 
+              variants={itemVariants}
+              className="flex justify-center"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
               <Button
                 size="lg"
                 className="bg-white hover:bg-stone-50 text-stone-900 px-10 py-4 text-lg font-semibold font-sans rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 border-2 border-white"
               >
                 Start 7-day free trial
               </Button>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
-      </div>
+      </motion.div>
 
       {/* Features Section */}
       <div className="max-w-7xl mx-auto">
@@ -156,7 +262,13 @@ export default function Component() {
             </p>
           </motion.div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <motion.div 
+            className="grid grid-cols-1 md:grid-cols-3 gap-8"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+          >
             {[
               {
                 image: "https://images.pexels.com/photos/3560044/pexels-photo-3560044.jpeg",
@@ -198,22 +310,50 @@ export default function Component() {
                 </motion.div>
               </motion.div>
             ))}
-          </div>
+          </motion.div>
         </motion.section>
 
         {/* Pricing Section */}
-        <section className="py-24 px-4 sm:px-6 lg:px-8 rounded-[3rem]">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-serif font-bold text-stone-900 mb-4">
+        <motion.section 
+          className="py-24 px-4 sm:px-6 lg:px-8 rounded-[3rem]"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+        >
+          <motion.div 
+            className="text-center mb-16"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
+            <motion.h2 
+              variants={itemVariants}
+              className="text-4xl md:text-5xl font-serif font-bold text-stone-900 mb-4"
+            >
               Simple, Transparent Pricing
-            </h2>
-            <p className="text-lg text-stone-600 max-w-2xl mx-auto">
+            </motion.h2>
+            <motion.p 
+              variants={itemVariants}
+              className="text-lg text-stone-600 max-w-2xl mx-auto"
+            >
               Choose the perfect plan for your meditation journey.
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            </motion.p>
+          </motion.div>
+          <motion.div 
+            className="grid grid-cols-1 md:grid-cols-3 gap-8"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
             {/* Basic Plan */}
-            <div className="bg-white p-8 rounded-3xl border border-stone-200 hover:border-stone-300 transition-colors">
+            <motion.div 
+              variants={itemVariants}
+              whileHover={{ scale: 1.02 }}
+              className="bg-white p-8 rounded-3xl border border-stone-200 hover:border-stone-300 transition-colors"
+            >
               <h3 className="text-xl font-bold mb-2">Basic</h3>
               <div className="mb-6">
                 <span className="text-4xl font-bold">$9</span>
@@ -236,9 +376,13 @@ export default function Component() {
               <Button className="w-full bg-stone-100 hover:bg-stone-200 text-stone-900 rounded-2xl">
                 Get Started
               </Button>
-            </div>
+            </motion.div>
             {/* Pro Plan */}
-            <div className="bg-stone-900 p-8 rounded-3xl border-2 border-stone-700 text-white transform scale-105 shadow-2xl">
+            <motion.div 
+              variants={itemVariants}
+              whileHover={{ scale: 1.05 }}
+              className="bg-stone-900 p-8 rounded-3xl border-2 border-stone-700 text-white transform scale-105 shadow-2xl"
+            >
               <h3 className="text-xl font-bold mb-2">Pro</h3>
               <div className="mb-6">
                 <span className="text-4xl font-bold">$19</span>
@@ -265,9 +409,13 @@ export default function Component() {
               <Button className="w-full bg-white hover:bg-stone-100 text-stone-900 rounded-2xl">
                 Get Started
               </Button>
-            </div>
+            </motion.div>
             {/* Enterprise Plan */}
-            <div className="bg-white p-8 rounded-3xl border border-stone-200 hover:border-stone-300 transition-colors">
+            <motion.div 
+              variants={itemVariants}
+              whileHover={{ scale: 1.02 }}
+              className="bg-white p-8 rounded-3xl border border-stone-200 hover:border-stone-300 transition-colors"
+            >
               <h3 className="text-xl font-bold mb-2">Enterprise</h3>
               <div className="mb-6">
                 <span className="text-4xl font-bold">$49</span>
@@ -294,88 +442,110 @@ export default function Component() {
               <Button className="w-full bg-stone-100 hover:bg-stone-200 text-stone-900 rounded-2xl">
                 Contact Sales
               </Button>
-            </div>
-          </div>
-        </section>
+            </motion.div>
+          </motion.div>
+        </motion.section>
 
         {/* Testimonials */}
-        <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-stone-50 to-white rounded-[3rem]">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-serif font-bold text-stone-900 mb-4">
+        <motion.section 
+          className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-stone-50 to-white rounded-[3rem]"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+        >
+          <motion.div 
+            className="text-center mb-16"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
+            <motion.h2 
+              variants={itemVariants}
+              className="text-4xl md:text-5xl font-serif font-bold text-stone-900 mb-4"
+            >
               What Our Users Say
-            </h2>
-            <p className="text-lg text-stone-600 max-w-2xl mx-auto">
+            </motion.h2>
+            <motion.p 
+              variants={itemVariants}
+              className="text-lg text-stone-600 max-w-2xl mx-auto"
+            >
               Join thousands of satisfied meditators on their journey to mindfulness.
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Testimonial 1 */}
-            <div className="bg-white p-8 rounded-3xl shadow-lg border border-stone-100 hover:shadow-xl transition-shadow duration-300">
-              <div className="flex items-center mb-6">
-                <Image
-                  src="https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg"
-                  alt="Sarah Johnson"
-                  width={48}
-                  height={48}
-                  className="rounded-full"
-                />
-                <div className="ml-4">
-                  <h4 className="font-bold">Sarah Johnson</h4>
-                  <p className="text-stone-600 text-sm">Mindfulness Enthusiast</p>
+            </motion.p>
+          </motion.div>
+          <motion.div 
+            className="grid grid-cols-1 md:grid-cols-3 gap-8"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
+            {/* Testimonials */}
+            {[
+              {
+                image: "https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg",
+                name: "Sarah Johnson",
+                role: "Mindfulness Enthusiast",
+                quote: "Serenica has transformed my meditation practice. The AI recommendations are spot-on, and I've seen remarkable progress in my mindfulness journey."
+              },
+              {
+                image: "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg",
+                name: "Michael Chen",
+                role: "Tech Professional",
+                quote: "As a busy professional, Serenica helps me stay grounded. The guided sessions are perfect for my schedule, and the results are incredible."
+              },
+              {
+                image: "https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg",
+                name: "Emma Davis",
+                role: "Yoga Teacher",
+                quote: "I recommend Serenica to all my students. The platform's approach to meditation is both modern and authentic."
+              }
+            ].map((testimonial, index) => (
+              <motion.div
+                key={index}
+                variants={itemVariants}
+                whileHover={{ scale: 1.05 }}
+                className="bg-white p-8 rounded-3xl shadow-lg border border-stone-100 hover:shadow-xl transition-shadow duration-300"
+              >
+                <div className="flex items-center mb-6">
+                  <Image
+                    src={testimonial.image}
+                    alt={testimonial.name}
+                    width={48}
+                    height={48}
+                    className="rounded-full"
+                  />
+                  <div className="ml-4">
+                    <h4 className="font-bold">{testimonial.name}</h4>
+                    <p className="text-stone-600 text-sm">{testimonial.role}</p>
+                  </div>
                 </div>
-              </div>
-              <p className="text-stone-600">
-                "Serenica has transformed my meditation practice. The AI recommendations are spot-on, and I've seen remarkable progress in my mindfulness journey."
-              </p>
-            </div>
-            {/* Testimonial 2 */}
-            <div className="bg-white p-8 rounded-3xl shadow-lg border border-stone-100 hover:shadow-xl transition-shadow duration-300">
-              <div className="flex items-center mb-6">
-                <Image
-                  src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg"
-                  alt="Michael Chen"
-                  width={48}
-                  height={48}
-                  className="rounded-full"
-                />
-                <div className="ml-4">
-                  <h4 className="font-bold">Michael Chen</h4>
-                  <p className="text-stone-600 text-sm">Tech Professional</p>
-                </div>
-              </div>
-              <p className="text-stone-600">
-                "As a busy professional, Serenica helps me stay grounded. The guided sessions are perfect for my schedule, and the results are incredible."
-              </p>
-            </div>
-            {/* Testimonial 3 */}
-            <div className="bg-white p-8 rounded-3xl shadow-lg border border-stone-100 hover:shadow-xl transition-shadow duration-300">
-              <div className="flex items-center mb-6">
-                <Image
-                  src="https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg"
-                  alt="Emma Davis"
-                  width={48}
-                  height={48}
-                  className="rounded-full"
-                />
-                <div className="ml-4">
-                  <h4 className="font-bold">Emma Davis</h4>
-                  <p className="text-stone-600 text-sm">Yoga Teacher</p>
-                </div>
-              </div>
-              <p className="text-stone-600">
-                "I recommend Serenica to all my students. The platform's approach to meditation is both modern and authentic."
-              </p>
-            </div>
-          </div>
-        </section>
+                <p className="text-stone-600">{testimonial.quote}</p>
+              </motion.div>
+            ))}
+          </motion.div>
+        </motion.section>
       </div>
 
       {/* Footer */}
-      <footer className="bg-stone-900 text-white py-16 px-4 sm:px-6 lg:px-8 mt-24 rounded-t-[3rem]">
+      <motion.footer 
+        className="bg-stone-900 text-white py-16 px-4 sm:px-6 lg:px-8 mt-24 rounded-t-[3rem]"
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+      >
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
+          <motion.div 
+            className="grid grid-cols-1 md:grid-cols-4 gap-12"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
             {/* Brand */}
-            <div className="space-y-4">
+            <motion.div variants={itemVariants} className="space-y-4">
               <div className="flex items-center space-x-3">
                 <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center">
                   <span className="text-stone-900 text-lg font-serif font-bold">S</span>
@@ -385,9 +555,9 @@ export default function Component() {
               <p className="text-stone-400">
                 Your journey to mindfulness begins here.
               </p>
-            </div>
+            </motion.div>
             {/* Quick Links */}
-            <div>
+            <motion.div variants={itemVariants}>
               <h4 className="font-bold mb-4">Quick Links</h4>
               <ul className="space-y-2">
                 <li><Link href="#" className="text-stone-400 hover:text-white transition-colors">About Us</Link></li>
@@ -395,9 +565,9 @@ export default function Component() {
                 <li><Link href="#" className="text-stone-400 hover:text-white transition-colors">Pricing</Link></li>
                 <li><Link href="#" className="text-stone-400 hover:text-white transition-colors">Contact</Link></li>
               </ul>
-            </div>
+            </motion.div>
             {/* Resources */}
-            <div>
+            <motion.div variants={itemVariants}>
               <h4 className="font-bold mb-4">Resources</h4>
               <ul className="space-y-2">
                 <li><Link href="#" className="text-stone-400 hover:text-white transition-colors">Blog</Link></li>
@@ -405,22 +575,25 @@ export default function Component() {
                 <li><Link href="#" className="text-stone-400 hover:text-white transition-colors">FAQ</Link></li>
                 <li><Link href="#" className="text-stone-400 hover:text-white transition-colors">Support</Link></li>
               </ul>
-            </div>
+            </motion.div>
             {/* Legal */}
-            <div>
+            <motion.div variants={itemVariants}>
               <h4 className="font-bold mb-4">Legal</h4>
               <ul className="space-y-2">
                 <li><Link href="#" className="text-stone-400 hover:text-white transition-colors">Privacy Policy</Link></li>
                 <li><Link href="#" className="text-stone-400 hover:text-white transition-colors">Terms of Service</Link></li>
                 <li><Link href="#" className="text-stone-400 hover:text-white transition-colors">Cookie Policy</Link></li>
               </ul>
-            </div>
-          </div>
-          <div className="border-t border-stone-800 mt-12 pt-8 text-center text-stone-400">
+            </motion.div>
+          </motion.div>
+          <motion.div 
+            variants={itemVariants}
+            className="border-t border-stone-800 mt-12 pt-8 text-center text-stone-400"
+          >
             <p>&copy; {new Date().getFullYear()} Serenica. All rights reserved.</p>
-          </div>
+          </motion.div>
         </div>
-      </footer>
+      </motion.footer>
     </div>
   )
 }
