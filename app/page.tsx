@@ -21,104 +21,59 @@ export default function Component() {
 
   const cardVariants = {
     offscreen: {
-      y: 50,
-      opacity: 0
+      opacity: 1
     },
     onscreen: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        type: "spring",
-        duration: 1.5,
-        delay: 0.8
-      }
+      opacity: 1
     }
   }
 
   const imageVariants = {
     hover: {
-      scale: 1.05,
-      transition: {
-        duration: 0.3,
-        ease: "easeInOut"
-      }
+      scale: 1
     }
   }
 
   const textVariants = {
     hover: {
-      y: -5,
-      transition: {
-        duration: 0.3,
-        ease: "easeInOut"
-      }
+      y: 0
     }
   }
 
   const containerVariants = {
-    hidden: { opacity: 0 },
+    hidden: { opacity: 1 },
     visible: {
-      opacity: 1,
-      transition: {
-        delayChildren: 0.8,
-        staggerChildren: 0.4
-      }
+      opacity: 1
     }
   }
 
   const itemVariants = {
-    hidden: { y: 20, opacity: 0 },
+    hidden: { opacity: 1 },
     visible: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        type: "spring",
-        stiffness: 50,
-        delay: 0.8
-      }
+      opacity: 1
     }
   }
 
   const navVariants = {
-    hidden: { y: -100 },
+    hidden: { y: 0 },
     visible: {
-      y: 0,
-      transition: {
-        type: "spring",
-        stiffness: 100,
-        damping: 20
-      }
+      y: 0
     }
   }
 
   const heroVariants = {
-    hidden: { scale: 0.8, opacity: 0 },
+    hidden: { opacity: 1 },
     visible: {
-      scale: 1,
-      opacity: 1,
-      transition: {
-        type: "spring",
-        stiffness: 100,
-        damping: 20,
-        duration: 0.8
-      }
+      opacity: 1
     }
   }
 
   const featureCardVariants = {
     hidden: { 
-      y: 100,
-      opacity: 0
+      opacity: 1
     },
     visible: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        type: "spring",
-        stiffness: 50,
-        duration: 1.2,
-        delay: 0.4
-      }
+      opacity: 1
     }
   }
 
@@ -126,7 +81,7 @@ export default function Component() {
     <div className="min-h-screen bg-white" ref={ref}>
       {/* Header */}
       <motion.header 
-        initial="hidden"
+        initial="visible"
         animate="visible"
         variants={navVariants}
         className="bg-white/95 backdrop-blur-sm sticky top-0 z-50"
@@ -136,8 +91,6 @@ export default function Component() {
             {/* Logo */}
             <motion.div 
               className="flex items-center space-x-3"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
             >
               <div className="w-10 h-10 bg-gradient-to-br from-stone-700 to-stone-900 rounded-full flex items-center justify-center shadow-lg">
                 <span className="text-white text-lg font-serif font-bold">S</span>
@@ -149,7 +102,7 @@ export default function Component() {
             <motion.nav 
               className="hidden md:flex items-center space-x-10"
               variants={containerVariants}
-              initial="hidden"
+              initial="visible"
               animate="visible"
             >
               {["Home", "Meditations", "Programs", "About", "Support"].map((item, index) => (
@@ -168,7 +121,7 @@ export default function Component() {
             <motion.div 
               className="flex items-center space-x-4"
               variants={containerVariants}
-              initial="hidden"
+              initial="visible"
               animate="visible"
             >
               <motion.div variants={itemVariants}>
@@ -176,11 +129,7 @@ export default function Component() {
                   Sign In
                 </Link>
               </motion.div>
-              <motion.div 
-                variants={itemVariants}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
+              <motion.div variants={itemVariants}>
                 <Button className="bg-stone-900 hover:bg-stone-800 text-white px-6 py-2.5 rounded-full font-medium font-sans shadow-lg hover:shadow-xl transition-all duration-200">
                   Get Started
                 </Button>
@@ -192,7 +141,7 @@ export default function Component() {
 
       {/* Hero Section */}
       <motion.div 
-        initial="hidden"
+        initial="visible"
         animate="visible"
         variants={heroVariants}
         className="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8 py-2"
@@ -241,12 +190,7 @@ export default function Component() {
             </motion.p>
 
             {/* CTA Button */}
-            <motion.div 
-              variants={itemVariants}
-              className="flex justify-center"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
+            <motion.div variants={itemVariants} className="flex justify-center">
               <Button
                 size="lg"
                 className="bg-white hover:bg-stone-50 text-stone-900 px-10 py-4 text-lg font-semibold font-sans rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 border-2 border-white"
@@ -261,16 +205,15 @@ export default function Component() {
       {/* Features Section */}
       <div className="max-w-7xl mx-auto">
         <motion.section 
-          initial="offscreen"
+          initial="onscreen"
           whileInView="onscreen"
           viewport={{ once: true, amount: 0.3, margin: "-100px" }}
           className="py-24 px-4 sm:px-6 lg:px-8"
         >
           <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 1 }}
+            whileInView={{ opacity: 1 }}
             viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 1.2, delay: 0.8 }}
             className="text-center mb-20"
           >
             <h2 className="text-4xl md:text-5xl font-serif font-bold text-stone-900 mb-4">
@@ -284,7 +227,7 @@ export default function Component() {
           <motion.div 
             className="grid grid-cols-1 md:grid-cols-3 gap-8"
             variants={containerVariants}
-            initial="hidden"
+            initial="visible"
             whileInView="visible"
             viewport={{ once: true, amount: 0.3, margin: "-100px" }}
           >
@@ -308,7 +251,6 @@ export default function Component() {
               <motion.div
                 key={index}
                 variants={featureCardVariants}
-                whileHover="hover"
                 custom={index}
                 className="bg-white rounded-3xl p-6 shadow-lg border border-stone-100 hover:shadow-xl transition-all duration-300"
               >
@@ -335,15 +277,14 @@ export default function Component() {
         {/* Pricing Section */}
         <motion.section 
           className="py-24 px-4 sm:px-6 lg:px-8 rounded-[3rem]"
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 1 }}
+          whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
         >
           <motion.div 
             className="text-center mb-16"
             variants={containerVariants}
-            initial="hidden"
+            initial="visible"
             whileInView="visible"
             viewport={{ once: true }}
           >
@@ -363,14 +304,13 @@ export default function Component() {
           <motion.div 
             className="grid grid-cols-1 md:grid-cols-3 gap-8"
             variants={containerVariants}
-            initial="hidden"
+            initial="visible"
             whileInView="visible"
             viewport={{ once: true }}
           >
             {/* Basic Plan */}
             <motion.div 
               variants={itemVariants}
-              whileHover={{ scale: 1.02 }}
               className="bg-white p-8 rounded-3xl border border-stone-200 hover:border-stone-300 transition-colors"
             >
               <h3 className="text-xl font-bold mb-2">Basic</h3>
@@ -399,7 +339,6 @@ export default function Component() {
             {/* Pro Plan */}
             <motion.div 
               variants={itemVariants}
-              whileHover={{ scale: 1.05 }}
               className="bg-stone-900 p-8 rounded-3xl border-2 border-stone-700 text-white transform scale-105 shadow-2xl"
             >
               <h3 className="text-xl font-bold mb-2">Pro</h3>
@@ -432,7 +371,6 @@ export default function Component() {
             {/* Enterprise Plan */}
             <motion.div 
               variants={itemVariants}
-              whileHover={{ scale: 1.02 }}
               className="bg-white p-8 rounded-3xl border border-stone-200 hover:border-stone-300 transition-colors"
             >
               <h3 className="text-xl font-bold mb-2">Enterprise</h3>
@@ -468,15 +406,14 @@ export default function Component() {
         {/* Testimonials */}
         <motion.section 
           className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-stone-50 to-white rounded-[3rem]"
-          initial={{ opacity: 0 }}
+          initial={{ opacity: 1 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
         >
           <motion.div 
             className="text-center mb-16"
             variants={containerVariants}
-            initial="hidden"
+            initial="visible"
             whileInView="visible"
             viewport={{ once: true }}
           >
@@ -496,7 +433,7 @@ export default function Component() {
           <motion.div 
             className="grid grid-cols-1 md:grid-cols-3 gap-8"
             variants={containerVariants}
-            initial="hidden"
+            initial="visible"
             whileInView="visible"
             viewport={{ once: true }}
           >
@@ -524,7 +461,6 @@ export default function Component() {
               <motion.div
                 key={index}
                 variants={itemVariants}
-                whileHover={{ scale: 1.05 }}
                 className="bg-white p-8 rounded-3xl shadow-lg border border-stone-100 hover:shadow-xl transition-shadow duration-300"
               >
                 <div className="flex items-center mb-6">
@@ -550,16 +486,15 @@ export default function Component() {
       {/* Footer */}
       <motion.footer 
         className="bg-stone-900 text-white py-16 px-4 sm:px-6 lg:px-8 mt-24 rounded-t-[3rem]"
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
+        initial={{ opacity: 1 }}
+        whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.8 }}
       >
         <div className="max-w-7xl mx-auto">
           <motion.div 
             className="grid grid-cols-1 md:grid-cols-4 gap-12"
             variants={containerVariants}
-            initial="hidden"
+            initial="visible"
             whileInView="visible"
             viewport={{ once: true }}
           >
