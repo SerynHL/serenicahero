@@ -30,8 +30,8 @@ export default function Component() {
       transition: {
         type: "spring",
         bounce: 0.4,
-        duration: 0.8,
-        delay: 0.5
+        duration: 1.5,
+        delay: 0.8
       }
     }
   }
@@ -61,8 +61,8 @@ export default function Component() {
     visible: {
       opacity: 1,
       transition: {
-        delayChildren: 0.3,
-        staggerChildren: 0.2
+        delayChildren: 0.8,
+        staggerChildren: 0.4
       }
     }
   }
@@ -74,8 +74,8 @@ export default function Component() {
       opacity: 1,
       transition: {
         type: "spring",
-        stiffness: 100,
-        delay: 0.5
+        stiffness: 50,
+        delay: 0.8
       }
     }
   }
@@ -254,7 +254,7 @@ export default function Component() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.6, delay: 0.3 }}
+            transition={{ duration: 1.2, delay: 0.8 }}
             className="text-center mb-20"
           >
             <h2 className="text-4xl md:text-5xl font-serif font-bold text-stone-900 mb-4">
