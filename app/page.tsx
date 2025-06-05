@@ -541,11 +541,11 @@ export default function Component() {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <div className="max-w-5xl mx-auto bg-stone-900 rounded-3xl overflow-hidden">
+          <div className="max-w-5xl mx-auto bg-gradient-to-br from-stone-800 to-stone-950 rounded-3xl overflow-hidden">
             <div className="relative p-8 md:p-12 lg:p-16">
               {/* Background Pattern */}
-              <div className="absolute inset-0 opacity-10">
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.2)_0%,rgba(255,255,255,0)_100%)]"></div>
+              <div className="absolute inset-0">
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.1)_0%,rgba(255,255,255,0)_100%)]"></div>
               </div>
               
               <div className="relative z-10 text-center">
@@ -555,34 +555,26 @@ export default function Component() {
                   transition={{ delay: 0.2 }}
                   className="text-4xl md:text-5xl font-serif font-bold text-white mb-6"
                 >
-                  Ready to Transform Your Meditation Practice?
+                  Begin Your Journey to Inner Peace
                 </motion.h2>
                 <motion.p
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.3 }}
-                  className="text-lg md:text-xl text-stone-300 mb-8 max-w-2xl mx-auto"
+                  className="text-lg md:text-xl text-stone-300 mb-10 max-w-2xl mx-auto"
                 >
-                  Join thousands of mindful practitioners and start your journey to inner peace today.
+                  Download Serenica now and discover the power of AI-guided meditation.
                 </motion.p>
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.4 }}
-                  className="flex flex-col sm:flex-row gap-4 justify-center items-center"
                 >
                   <Button
                     size="lg"
-                    className="bg-white hover:bg-stone-50 text-stone-900 px-8 py-6 text-lg font-semibold rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 min-w-[200px]"
+                    className="bg-white hover:bg-stone-50 text-stone-900 px-12 py-6 text-lg font-semibold rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105"
                   >
-                    Start Free Trial
-                  </Button>
-                  <Button
-                    size="lg"
-                    variant="outline"
-                    className="border-white text-white hover:bg-white/10 px-8 py-6 text-lg font-semibold rounded-full transition-all duration-300 hover:scale-105 min-w-[200px]"
-                  >
-                    Watch Demo
+                    Download Now
                   </Button>
                 </motion.div>
               </div>
