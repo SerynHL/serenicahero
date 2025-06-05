@@ -3,8 +3,8 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
-import { motion, useScroll, useSpring } from "framer-motion"
-import { useRef } from "react"
+import { motion, useScroll, useTransform, useSpring, useInView } from "framer-motion"
+import { useRef, useState, useEffect } from "react"
 
 export default function Component() {
   const ref = useRef(null)
@@ -12,6 +12,21 @@ export default function Component() {
     target: ref,
     offset: ["start start", "end end"]
   })
+
+  // Add header scroll behavior
+  const [lastScrollY, setLastScrollY] = useState(0)
+  const [shouldShowHeader, setShouldShowHeader] = useState(true)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY
+      setShouldShowHeader(currentScrollY < lastScrollY || currentScrollY < 50)
+      setLastScrollY(currentScrollY)
+    }
+
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [lastScrollY])
 
   const scaleProgress = useSpring(scrollYProgress, {
     stiffness: 100,
@@ -29,8 +44,9 @@ export default function Component() {
       opacity: 1,
       transition: {
         type: "spring",
-        bounce: 0.4,
-        duration: 0.8
+        bounce: 0.2,
+        duration: 1.2,
+        delay: 0.2
       }
     }
   }
@@ -60,8 +76,10 @@ export default function Component() {
     visible: {
       opacity: 1,
       transition: {
-        delayChildren: 0.3,
-        staggerChildren: 0.2
+        staggerChildren: 0.3,
+        delayChildren: 0.2,
+        duration: 0.8,
+        ease: "easeOut"
       }
     }
   }
@@ -73,7 +91,9 @@ export default function Component() {
       opacity: 1,
       transition: {
         type: "spring",
-        stiffness: 100
+        stiffness: 50,
+        damping: 20,
+        duration: 0.8
       }
     }
   }
@@ -104,13 +124,23 @@ export default function Component() {
     }
   }
 
+  const featuresSectionRef = useRef(null)
+  const featuresInView = useInView(featuresSectionRef, { 
+    once: false,
+    amount: 0.2
+  })
+
   return (
     <div className="min-h-screen bg-white" ref={ref}>
       {/* Header */}
       <motion.header 
-        initial="hidden"
-        animate="visible"
-        variants={navVariants}
+        initial="visible"
+        animate={shouldShowHeader ? "visible" : "hidden"}
+        variants={{
+          visible: { y: 0, opacity: 1 },
+          hidden: { y: -100, opacity: 0 }
+        }}
+        transition={{ duration: 0.3 }}
         className="bg-white/95 backdrop-blur-sm sticky top-0 z-50"
       >
         <div className="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8">
@@ -243,15 +273,13 @@ export default function Component() {
       {/* Features Section */}
       <div className="max-w-7xl mx-auto">
         <motion.section 
-          initial="offscreen"
-          whileInView="onscreen"
-          viewport={{ once: true, amount: 0.3 }}
+          ref={featuresSectionRef}
+          animate={featuresInView ? "visible" : "hidden"}
+          variants={containerVariants}
           className="py-24 px-4 sm:px-6 lg:px-8"
         >
           <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            variants={itemVariants}
             className="text-center mb-20"
           >
             <h2 className="text-4xl md:text-5xl font-serif font-bold text-stone-900 mb-4">
@@ -265,23 +293,20 @@ export default function Component() {
           <motion.div 
             className="grid grid-cols-1 md:grid-cols-3 gap-8"
             variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
           >
             {[
               {
-                image: "https://images.pexels.com/photos/3560044/pexels-photo-3560044.jpeg",
+                image: "/Analyse Hero Serenica copy.png",
                 title: "Instant Emotional Check-in",
                 description: "AI-powered analysis instantly understands your mental state and recommends the perfect meditation."
               },
               {
-                image: "https://images.pexels.com/photos/3822622/pexels-photo-3822622.jpeg",
+                image: "/Analyse Hero Serenica (1).png",
                 title: "Personalized Journey",
                 description: "Customized meditation paths that evolve with your practice and adapt to your progress."
               },
               {
-                image: "https://images.pexels.com/photos/897817/pexels-photo-897817.jpeg",
+                image: "/image.png",
                 title: "Progress Insights",
                 description: "Track your mindfulness journey with detailed analytics and personalized recommendations."
               }
@@ -525,6 +550,55 @@ export default function Component() {
               </motion.div>
             ))}
           </motion.div>
+        </motion.section>
+
+        {/* CTA Section */}
+        <motion.section
+          className="py-24 px-4 sm:px-6 lg:px-8"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+        >
+          <div className="max-w-5xl mx-auto bg-gradient-to-br from-stone-800 to-stone-950 rounded-3xl overflow-hidden">
+            <div className="relative p-8 md:p-12 lg:p-16">
+              {/* Background Pattern */}
+              <div className="absolute inset-0">
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.1)_0%,rgba(255,255,255,0)_100%)]"></div>
+              </div>
+              
+              <div className="relative z-10 text-center">
+                <motion.h2
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.2 }}
+                  className="text-4xl md:text-5xl font-serif font-bold text-white mb-6"
+                >
+                  Begin Your Journey to Inner Peace
+                </motion.h2>
+                <motion.p
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.3 }}
+                  className="text-lg md:text-xl text-stone-300 mb-10 max-w-2xl mx-auto"
+                >
+                  Download Serenica now and discover the power of AI-guided meditation.
+                </motion.p>
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.4 }}
+                >
+                  <Button
+                    size="lg"
+                    className="bg-white hover:bg-stone-50 text-stone-900 px-12 py-6 text-lg font-semibold rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105"
+                  >
+                    Download Now
+                  </Button>
+                </motion.div>
+              </div>
+            </div>
+          </div>
         </motion.section>
       </div>
 
