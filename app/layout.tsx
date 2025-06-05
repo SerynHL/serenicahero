@@ -31,10 +31,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="stylesheet" href="globals.css" />
-      </head>
       <body className={`${instrumentSerif.variable} ${manrope.variable} font-sans antialiased`}>
         <ThemeProvider
           attribute="class"
