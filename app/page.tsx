@@ -29,9 +29,10 @@ export default function Component() {
   }, [lastScrollY])
 
   const scaleProgress = useSpring(scrollYProgress, {
-    stiffness: 50, // Reduced for smoother motion
-    damping: 25,
-    restDelta: 0.001
+    stiffness: 20, // Reduced for much smoother scrolling
+    damping: 40, // Increased damping for less oscillation
+    mass: 1.2, // Added mass for more weight in the scroll
+    restDelta: 0.0001 // Smaller rest delta for smoother stopping
   })
 
   const cardVariants = {
@@ -44,18 +45,18 @@ export default function Component() {
       opacity: 1,
       transition: {
         type: "spring",
-        bounce: 0.1, // Reduced bounce for smoother animation
+        bounce: 0.1,
         duration: 1.5,
         delay: 0.2,
-        stiffness: 40, // Lower stiffness for smoother spring
-        damping: 20 // Adjusted damping for smoother movement
+        stiffness: 40,
+        damping: 20
       }
     }
   }
 
   const imageVariants = {
     hover: {
-      scale: 1.03, // Reduced scale for subtler effect
+      scale: 1.03,
       transition: {
         duration: 0.4,
         ease: "easeOut"
@@ -65,7 +66,7 @@ export default function Component() {
 
   const textVariants = {
     hover: {
-      y: -3, // Reduced movement for subtler effect
+      y: -3,
       transition: {
         duration: 0.4,
         ease: "easeOut"
@@ -78,7 +79,7 @@ export default function Component() {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.4, // Increased for more spacing between animations
+        staggerChildren: 0.4,
         delayChildren: 0.3,
         duration: 1,
         ease: "easeOut"
