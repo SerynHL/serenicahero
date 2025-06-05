@@ -1,5 +1,3 @@
-'use client'
-
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
@@ -29,7 +27,6 @@ export default function Component() {
       opacity: 1,
       transition: {
         type: "spring",
-        bounce: 0.4,
         duration: 1.5,
         delay: 0.8
       }
@@ -102,6 +99,23 @@ export default function Component() {
         stiffness: 100,
         damping: 20,
         duration: 0.8
+      }
+    }
+  }
+
+  const featureCardVariants = {
+    hidden: { 
+      y: 100,
+      opacity: 0
+    },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        type: "spring",
+        stiffness: 50,
+        duration: 1.2,
+        delay: 0.4
       }
     }
   }
@@ -291,7 +305,7 @@ export default function Component() {
             ].map((card, index) => (
               <motion.div
                 key={index}
-                variants={cardVariants}
+                variants={featureCardVariants}
                 whileHover="hover"
                 custom={index}
                 className="bg-white rounded-3xl p-6 shadow-lg border border-stone-100 hover:shadow-xl transition-all duration-300"
