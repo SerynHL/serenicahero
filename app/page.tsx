@@ -30,7 +30,8 @@ export default function Component() {
       transition: {
         type: "spring",
         bounce: 0.4,
-        duration: 0.8
+        duration: 0.8,
+        delay: 0.2
       }
     }
   }
@@ -103,6 +104,12 @@ export default function Component() {
       }
     }
   }
+
+  const featuresSectionRef = useRef(null)
+  const featuresInView = useInView(featuresSectionRef, { 
+    once: false,
+    amount: 0.2
+  })
 
   return (
     <div className="min-h-screen bg-white" ref={ref}>
@@ -243,15 +250,13 @@ export default function Component() {
       {/* Features Section */}
       <div className="max-w-7xl mx-auto">
         <motion.section 
-          initial="offscreen"
-          whileInView="onscreen"
-          viewport={{ once: true, amount: 0.3 }}
+          ref={featuresSectionRef}
+          animate={featuresInView ? "visible" : "hidden"}
+          variants={containerVariants}
           className="py-24 px-4 sm:px-6 lg:px-8"
         >
           <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            variants={itemVariants}
             className="text-center mb-20"
           >
             <h2 className="text-4xl md:text-5xl font-serif font-bold text-stone-900 mb-4">
@@ -265,9 +270,6 @@ export default function Component() {
           <motion.div 
             className="grid grid-cols-1 md:grid-cols-3 gap-8"
             variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
           >
             {[
               {
