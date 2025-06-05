@@ -306,7 +306,7 @@ export default function Component() {
                 description: "Customized meditation paths that evolve with your practice and adapt to your progress."
               },
               {
-                image: "https://images.pexels.com/photos/897817/pexels-photo-897817.jpeg",
+                image: "/image.png",
                 title: "Progress Insights",
                 description: "Track your mindfulness journey with detailed analytics and personalized recommendations."
               }
