@@ -37,11 +37,11 @@ export default function Component() {
   })
 
   const cardVariants = {
-    offscreen: {
+    hidden: {
       y: 50,
       opacity: 0
     },
-    onscreen: {
+    visible: {
       y: 0,
       opacity: 1,
       transition: {
@@ -129,7 +129,8 @@ export default function Component() {
   const featuresSectionRef = useRef(null)
   const featuresInView = useInView(featuresSectionRef, { 
     once: false,
-    amount: 0.2
+    amount: 0.2,
+    margin: "0px 0px -20% 0px"
   })
 
   return (
