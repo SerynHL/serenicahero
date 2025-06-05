@@ -29,8 +29,8 @@ export default function Component() {
   }, [lastScrollY])
 
   const scaleProgress = useSpring(scrollYProgress, {
-    stiffness: 100,
-    damping: 30,
+    stiffness: 50, // Reduced for smoother motion
+    damping: 25,
     restDelta: 0.001
   })
 
@@ -44,29 +44,31 @@ export default function Component() {
       opacity: 1,
       transition: {
         type: "spring",
-        bounce: 0.2,
-        duration: 1.2,
-        delay: 0.2
+        bounce: 0.1, // Reduced bounce for smoother animation
+        duration: 1.5,
+        delay: 0.2,
+        stiffness: 40, // Lower stiffness for smoother spring
+        damping: 20 // Adjusted damping for smoother movement
       }
     }
   }
 
   const imageVariants = {
     hover: {
-      scale: 1.05,
+      scale: 1.03, // Reduced scale for subtler effect
       transition: {
-        duration: 0.3,
-        ease: "easeInOut"
+        duration: 0.4,
+        ease: "easeOut"
       }
     }
   }
 
   const textVariants = {
     hover: {
-      y: -5,
+      y: -3, // Reduced movement for subtler effect
       transition: {
-        duration: 0.3,
-        ease: "easeInOut"
+        duration: 0.4,
+        ease: "easeOut"
       }
     }
   }
@@ -76,9 +78,9 @@ export default function Component() {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.3,
-        delayChildren: 0.2,
-        duration: 0.8,
+        staggerChildren: 0.4, // Increased for more spacing between animations
+        delayChildren: 0.3,
+        duration: 1,
         ease: "easeOut"
       }
     }
@@ -91,9 +93,9 @@ export default function Component() {
       opacity: 1,
       transition: {
         type: "spring",
-        stiffness: 50,
-        damping: 20,
-        duration: 0.8
+        stiffness: 40,
+        damping: 25,
+        duration: 1.2
       }
     }
   }
@@ -104,22 +106,23 @@ export default function Component() {
       y: 0,
       transition: {
         type: "spring",
-        stiffness: 100,
-        damping: 20
+        stiffness: 50,
+        damping: 20,
+        duration: 0.6
       }
     }
   }
 
   const heroVariants = {
-    hidden: { scale: 0.8, opacity: 0 },
+    hidden: { scale: 0.95, opacity: 0 },
     visible: {
       scale: 1,
       opacity: 1,
       transition: {
         type: "spring",
-        stiffness: 100,
-        damping: 20,
-        duration: 0.8
+        stiffness: 40,
+        damping: 25,
+        duration: 1.2
       }
     }
   }
@@ -127,7 +130,8 @@ export default function Component() {
   const featuresSectionRef = useRef(null)
   const featuresInView = useInView(featuresSectionRef, { 
     once: false,
-    amount: 0.2
+    amount: 0.2,
+    margin: "-100px"
   })
 
   return (
@@ -140,7 +144,7 @@ export default function Component() {
           visible: { y: 0, opacity: 1 },
           hidden: { y: -100, opacity: 0 }
         }}
-        transition={{ duration: 0.3 }}
+        transition={{ duration: 0.4, ease: "easeInOut" }}
         className="bg-white/95 backdrop-blur-sm sticky top-0 z-50"
       >
         <div className="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8">
@@ -148,8 +152,9 @@ export default function Component() {
             {/* Logo */}
             <motion.div 
               className="flex items-center space-x-3"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              transition={{ duration: 0.3 }}
             >
               <div className="w-10 h-10 bg-gradient-to-br from-stone-700 to-stone-900 rounded-full flex items-center justify-center shadow-lg">
                 <span className="text-white text-lg font-serif font-bold">S</span>
@@ -190,8 +195,8 @@ export default function Component() {
               </motion.div>
               <motion.div 
                 variants={itemVariants}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
               >
                 <Button className="bg-stone-900 hover:bg-stone-800 text-white px-6 py-2.5 rounded-full font-medium font-sans shadow-lg hover:shadow-xl transition-all duration-200">
                   Get Started
@@ -256,8 +261,8 @@ export default function Component() {
             <motion.div 
               variants={itemVariants}
               className="flex justify-center"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
             >
               <Button
                 size="lg"
@@ -344,7 +349,7 @@ export default function Component() {
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 1, ease: "easeOut" }}
         >
           <motion.div 
             className="text-center mb-16"
@@ -477,7 +482,7 @@ export default function Component() {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 1, ease: "easeOut" }}
         >
           <motion.div 
             className="text-center mb-16"
@@ -530,7 +535,7 @@ export default function Component() {
               <motion.div
                 key={index}
                 variants={itemVariants}
-                whileHover={{ scale: 1.05 }}
+                whileHover={{ scale: 1.02 }}
                 className="bg-white p-8 rounded-3xl shadow-lg border border-stone-100 hover:shadow-xl transition-shadow duration-300"
               >
                 <div className="flex items-center mb-6">
