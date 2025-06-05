@@ -1,5 +1,3 @@
-'use client'
-
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
@@ -296,17 +294,17 @@ export default function Component() {
           >
             {[
               {
-                image: "https://images.pexels.com/photos/3560044/pexels-photo-3560044.jpeg",
+                image: "/Analyse Hero Serenica.png",
                 title: "Instant Emotional Check-in",
                 description: "AI-powered analysis instantly understands your mental state and recommends the perfect meditation."
               },
               {
-                image: "https://images.pexels.com/photos/3822622/pexels-photo-3822622.jpeg",
+                image: "/Analyse Hero Serenica.png",
                 title: "Personalized Journey",
                 description: "Customized meditation paths that evolve with your practice and adapt to your progress."
               },
               {
-                image: "https://images.pexels.com/photos/897817/pexels-photo-897817.jpeg",
+                image: "/Analyse Hero Serenica.png",
                 title: "Progress Insights",
                 description: "Track your mindfulness journey with detailed analytics and personalized recommendations."
               }
@@ -471,6 +469,55 @@ export default function Component() {
           </motion.div>
         </motion.section>
 
+        {/* CTA Section */}
+        <motion.section
+          className="py-24 px-4 sm:px-6 lg:px-8"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+        >
+          <div className="max-w-5xl mx-auto bg-gradient-to-br from-stone-800 to-stone-950 rounded-3xl overflow-hidden">
+            <div className="relative p-8 md:p-12 lg:p-16">
+              {/* Background Pattern */}
+              <div className="absolute inset-0">
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.1)_0%,rgba(255,255,255,0)_100%)]"></div>
+              </div>
+              
+              <div className="relative z-10 text-center">
+                <motion.h2
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.2 }}
+                  className="text-4xl md:text-5xl font-serif font-bold text-white mb-6"
+                >
+                  Begin Your Journey to Inner Peace
+                </motion.h2>
+                <motion.p
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.3 }}
+                  className="text-lg md:text-xl text-stone-300 mb-10 max-w-2xl mx-auto"
+                >
+                  Download Serenica now and discover the power of AI-guided meditation.
+                </motion.p>
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.4 }}
+                >
+                  <Button
+                    size="lg"
+                    className="bg-white hover:bg-stone-50 text-stone-900 px-12 py-6 text-lg font-semibold rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105"
+                  >
+                    Download Now
+                  </Button>
+                </motion.div>
+              </div>
+            </div>
+          </div>
+        </motion.section>
+
         {/* Testimonials */}
         <motion.section 
           className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-stone-50 to-white rounded-[3rem]"
@@ -550,55 +597,6 @@ export default function Component() {
               </motion.div>
             ))}
           </motion.div>
-        </motion.section>
-
-        {/* CTA Section */}
-        <motion.section
-          className="py-24 px-4 sm:px-6 lg:px-8"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-        >
-          <div className="max-w-5xl mx-auto bg-gradient-to-br from-stone-800 to-stone-950 rounded-3xl overflow-hidden">
-            <div className="relative p-8 md:p-12 lg:p-16">
-              {/* Background Pattern */}
-              <div className="absolute inset-0">
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.1)_0%,rgba(255,255,255,0)_100%)]"></div>
-              </div>
-              
-              <div className="relative z-10 text-center">
-                <motion.h2
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.2 }}
-                  className="text-4xl md:text-5xl font-serif font-bold text-white mb-6"
-                >
-                  Begin Your Journey to Inner Peace
-                </motion.h2>
-                <motion.p
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.3 }}
-                  className="text-lg md:text-xl text-stone-300 mb-10 max-w-2xl mx-auto"
-                >
-                  Download Serenica now and discover the power of AI-guided meditation.
-                </motion.p>
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.4 }}
-                >
-                  <Button
-                    size="lg"
-                    className="bg-white hover:bg-stone-50 text-stone-900 px-12 py-6 text-lg font-semibold rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105"
-                  >
-                    Download Now
-                  </Button>
-                </motion.div>
-              </div>
-            </div>
-          </div>
         </motion.section>
       </div>
 
