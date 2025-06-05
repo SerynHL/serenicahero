@@ -2,6 +2,7 @@ import type React from "react"
 import type { Metadata } from "next"
 import { Instrument_Serif, Manrope } from "next/font/google"
 import "./globals.css"
+import { ThemeProvider } from "@/components/theme-provider"
 
 const instrumentSerif = Instrument_Serif({
   subsets: ["latin"],
@@ -18,7 +19,7 @@ const manrope = Manrope({
 export const metadata: Metadata = {
   title: "Serenica - Find Your Inner Calm",
   description: "A personalized meditation journey guided by AI",
-    generator: 'v0.dev'
+  generator: 'v0.dev'
 }
 
 export default function RootLayout({
@@ -27,8 +28,17 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className={`${instrumentSerif.variable} ${manrope.variable} font-sans`}>{children}</body>
+    <html lang="en" suppressHydrationWarning>
+      <body className={`${instrumentSerif.variable} ${manrope.variable} font-sans antialiased`}>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="light"
+          enableSystem={false}
+          storageKey="serenica-theme"
+        >
+          {children}
+        </ThemeProvider>
+      </body>
     </html>
   )
 }
