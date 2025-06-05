@@ -296,7 +296,7 @@ export default function Component() {
           >
             {[
               {
-                image: "/Analyse Hero Serenica (1).png",
+                image: "https://images.pexels.com/photos/3560044/pexels-photo-3560044.jpeg",
                 title: "Instant Emotional Check-in",
                 description: "AI-powered analysis instantly understands your mental state and recommends the perfect meditation."
               },
@@ -306,7 +306,7 @@ export default function Component() {
                 description: "Customized meditation paths that evolve with your practice and adapt to your progress."
               },
               {
-                image: "/Analyse Hero Serenica (1).png",
+                image: "https://images.pexels.com/photos/897817/pexels-photo-897817.jpeg",
                 title: "Progress Insights",
                 description: "Track your mindfulness journey with detailed analytics and personalized recommendations."
               }
