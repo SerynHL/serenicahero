@@ -30,7 +30,8 @@ export default function Component() {
       transition: {
         type: "spring",
         bounce: 0.4,
-        duration: 0.8
+        duration: 0.8,
+        delay: 0.5
       }
     }
   }
@@ -73,7 +74,8 @@ export default function Component() {
       opacity: 1,
       transition: {
         type: "spring",
-        stiffness: 100
+        stiffness: 100,
+        delay: 0.5
       }
     }
   }
@@ -245,14 +247,14 @@ export default function Component() {
         <motion.section 
           initial="offscreen"
           whileInView="onscreen"
-          viewport={{ once: true, amount: 0.3 }}
+          viewport={{ once: true, amount: 0.3, margin: "-100px" }}
           className="py-24 px-4 sm:px-6 lg:px-8"
         >
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6, delay: 0.3 }}
             className="text-center mb-20"
           >
             <h2 className="text-4xl md:text-5xl font-serif font-bold text-stone-900 mb-4">
@@ -268,7 +270,7 @@ export default function Component() {
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
+            viewport={{ once: true, amount: 0.3, margin: "-100px" }}
           >
             {[
               {
