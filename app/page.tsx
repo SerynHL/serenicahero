@@ -257,11 +257,11 @@ export default function Component() {
           ref={featuresSectionRef}
           animate={featuresInView ? "visible" : "hidden"}
           variants={containerVariants}
-          className="py-16 px-4 sm:px-6 lg:px-8"
+          className="py-24 px-4 sm:px-6 lg:px-8"
         >
           <motion.div 
             variants={itemVariants}
-            className="text-center mb-16"
+            className="text-center mb-20"
           >
             <h2 className="text-4xl md:text-5xl font-serif font-bold text-stone-900 mb-4">
               Why Choose Serenica?
@@ -321,7 +321,7 @@ export default function Component() {
 
         {/* Pricing Section */}
         <motion.section 
-          className="py-16 px-4 sm:px-6 lg:px-8 rounded-[3rem]"
+          className="py-24 px-4 sm:px-6 lg:px-8 rounded-[3rem]"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -454,7 +454,7 @@ export default function Component() {
 
         {/* Testimonials */}
         <motion.section 
-          className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-stone-50 to-white rounded-[3rem]"
+          className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-stone-50 to-white rounded-[3rem]"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
@@ -535,7 +535,7 @@ export default function Component() {
 
         {/* CTA Section */}
         <motion.section
-          className="py-16 px-4 sm:px-6 lg:px-8"
+          className="py-24 px-4 sm:px-6 lg:px-8"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -585,7 +585,7 @@ export default function Component() {
 
       {/* Footer */}
       <motion.footer 
-        className="bg-stone-900 text-white py-16 px-4 sm:px-6 lg:px-8 mt-16 rounded-t-[3rem]"
+        className="bg-stone-900 text-white py-16 px-4 sm:px-6 lg:px-8 mt-24 rounded-t-[3rem]"
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
