@@ -8,12 +8,14 @@ const instrumentSerif = Instrument_Serif({
   subsets: ["latin"],
   variable: "--font-instrument-serif",
   weight: ["400"],
+  display: 'swap',
 })
 
 const manrope = Manrope({
   subsets: ["latin"],
   variable: "--font-manrope",
   weight: ["300", "400", "500", "600", "700"],
+  display: 'swap',
 })
 
 export const metadata: Metadata = {
@@ -29,6 +31,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      </head>
       <body className={`${instrumentSerif.variable} ${manrope.variable} font-sans antialiased`}>
         <ThemeProvider
           attribute="class"
