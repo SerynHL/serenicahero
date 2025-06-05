@@ -296,17 +296,17 @@ export default function Component() {
           >
             {[
               {
-                image: "/Analyse Hero Serenica.png",
+                image: "/Analyse Hero Serenica (1).png",
                 title: "Instant Emotional Check-in",
                 description: "AI-powered analysis instantly understands your mental state and recommends the perfect meditation."
               },
               {
-                image: "/Analyse Hero Serenica.png",
+                image: "/Analyse Hero Serenica (1).png",
                 title: "Personalized Journey",
                 description: "Customized meditation paths that evolve with your practice and adapt to your progress."
               },
               {
-                image: "/Analyse Hero Serenica.png",
+                image: "/Analyse Hero Serenica (1).png",
                 title: "Progress Insights",
                 description: "Track your mindfulness journey with detailed analytics and personalized recommendations."
               }
@@ -335,139 +335,6 @@ export default function Component() {
                 </motion.div>
               </motion.div>
             ))}
-          </motion.div>
-        </motion.section>
-
-        {/* Pricing Section */}
-        <motion.section 
-          className="py-24 px-4 sm:px-6 lg:px-8 rounded-[3rem]"
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-        >
-          <motion.div 
-            className="text-center mb-16"
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-          >
-            <motion.h2 
-              variants={itemVariants}
-              className="text-4xl md:text-5xl font-serif font-bold text-stone-900 mb-4"
-            >
-              Simple, Transparent Pricing
-            </motion.h2>
-            <motion.p 
-              variants={itemVariants}
-              className="text-lg text-stone-600 max-w-2xl mx-auto"
-            >
-              Choose the perfect plan for your meditation journey.
-            </motion.p>
-          </motion.div>
-          <motion.div 
-            className="grid grid-cols-1 md:grid-cols-3 gap-8"
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-          >
-            {/* Basic Plan */}
-            <motion.div 
-              variants={itemVariants}
-              whileHover={{ scale: 1.02 }}
-              className="bg-white p-8 rounded-3xl border border-stone-200 hover:border-stone-300 transition-colors"
-            >
-              <h3 className="text-xl font-bold mb-2">Basic</h3>
-              <div className="mb-6">
-                <span className="text-4xl font-bold">$9</span>
-                <span className="text-stone-600">/month</span>
-              </div>
-              <ul className="space-y-4 mb-8">
-                <li className="flex items-center">
-                  <span className="mr-2">✓</span>
-                  Basic guided meditations
-                </li>
-                <li className="flex items-center">
-                  <span className="mr-2">✓</span>
-                  Progress tracking
-                </li>
-                <li className="flex items-center">
-                  <span className="mr-2">✓</span>
-                  5 meditation programs
-                </li>
-              </ul>
-              <Button className="w-full bg-stone-100 hover:bg-stone-200 text-stone-900 rounded-2xl">
-                Get Started
-              </Button>
-            </motion.div>
-            {/* Pro Plan */}
-            <motion.div 
-              variants={itemVariants}
-              whileHover={{ scale: 1.05 }}
-              className="bg-stone-900 p-8 rounded-3xl border-2 border-stone-700 text-white transform scale-105 shadow-2xl"
-            >
-              <h3 className="text-xl font-bold mb-2">Pro</h3>
-              <div className="mb-6">
-                <span className="text-4xl font-bold">$19</span>
-                <span className="text-stone-300">/month</span>
-              </div>
-              <ul className="space-y-4 mb-8">
-                <li className="flex items-center">
-                  <span className="mr-2">✓</span>
-                  All Basic features
-                </li>
-                <li className="flex items-center">
-                  <span className="mr-2">✓</span>
-                  AI-powered recommendations
-                </li>
-                <li className="flex items-center">
-                  <span className="mr-2">✓</span>
-                  20 meditation programs
-                </li>
-                <li className="flex items-center">
-                  <span className="mr-2">✓</span>
-                  Advanced analytics
-                </li>
-              </ul>
-              <Button className="w-full bg-white hover:bg-stone-100 text-stone-900 rounded-2xl">
-                Get Started
-              </Button>
-            </motion.div>
-            {/* Enterprise Plan */}
-            <motion.div 
-              variants={itemVariants}
-              whileHover={{ scale: 1.02 }}
-              className="bg-white p-8 rounded-3xl border border-stone-200 hover:border-stone-300 transition-colors"
-            >
-              <h3 className="text-xl font-bold mb-2">Enterprise</h3>
-              <div className="mb-6">
-                <span className="text-4xl font-bold">$49</span>
-                <span className="text-stone-600">/month</span>
-              </div>
-              <ul className="space-y-4 mb-8">
-                <li className="flex items-center">
-                  <span className="mr-2">✓</span>
-                  All Pro features
-                </li>
-                <li className="flex items-center">
-                  <span className="mr-2">✓</span>
-                  Custom meditation content
-                </li>
-                <li className="flex items-center">
-                  <span className="mr-2">✓</span>
-                  Priority support
-                </li>
-                <li className="flex items-center">
-                  <span className="mr-2">✓</span>
-                  Team management
-                </li>
-              </ul>
-              <Button className="w-full bg-stone-100 hover:bg-stone-200 text-stone-900 rounded-2xl">
-                Contact Sales
-              </Button>
-            </motion.div>
           </motion.div>
         </motion.section>
 
