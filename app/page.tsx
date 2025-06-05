@@ -296,7 +296,7 @@ export default function Component() {
           >
             {[
               {
-                image: "https://images.pexels.com/photos/3560044/pexels-photo-3560044.jpeg",
+                image: "/Analyse Hero Serenica copy.png",
                 title: "Instant Emotional Check-in",
                 description: "AI-powered analysis instantly understands your mental state and recommends the perfect meditation."
               },
