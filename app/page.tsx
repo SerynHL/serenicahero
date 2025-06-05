@@ -6,11 +6,7 @@ import Image from "next/image"
 import { motion, useScroll, useTransform, useSpring, useInView } from "framer-motion"
 import { useRef } from "react"
 
-export default function Component({
-  searchParams
-}: {
-  searchParams: { [key: string]: string | string[] | undefined }
-}) {
+export default function Component() {
   const ref = useRef(null)
   const { scrollYProgress } = useScroll({
     target: ref,
