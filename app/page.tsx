@@ -4,7 +4,7 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import Image from "next/image"
 import { motion, useScroll, useTransform, useSpring, useInView } from "framer-motion"
-import { useRef } from "react"
+import { useRef, useState, useEffect } from "react"
 
 export default function Component() {
   const ref = useRef(null)
@@ -12,6 +12,21 @@ export default function Component() {
     target: ref,
     offset: ["start start", "end end"]
   })
+
+  // Add header scroll behavior
+  const [lastScrollY, setLastScrollY] = useState(0)
+  const [shouldShowHeader, setShouldShowHeader] = useState(true)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY
+      setShouldShowHeader(currentScrollY < lastScrollY || currentScrollY < 50)
+      setLastScrollY(currentScrollY)
+    }
+
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [lastScrollY])
 
   const scaleProgress = useSpring(scrollYProgress, {
     stiffness: 100,
@@ -119,9 +134,13 @@ export default function Component() {
     <div className="min-h-screen bg-white" ref={ref}>
       {/* Header */}
       <motion.header 
-        initial="hidden"
-        animate="visible"
-        variants={navVariants}
+        initial="visible"
+        animate={shouldShowHeader ? "visible" : "hidden"}
+        variants={{
+          visible: { y: 0, opacity: 1 },
+          hidden: { y: -100, opacity: 0 }
+        }}
+        transition={{ duration: 0.3 }}
         className="bg-white/95 backdrop-blur-sm sticky top-0 z-50"
       >
         <div className="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8">
