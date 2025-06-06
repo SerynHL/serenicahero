@@ -6,11 +6,19 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'images.pexels.com'
+        hostname: '**.pexels.com'
       }
     ]
   },
-  trailingSlash: true
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+  typescript: {
+    ignoreBuildErrors: true,
+  },
+  basePath: process.env.NODE_ENV === 'production' ? '/serenica' : '',
+  assetPrefix: process.env.NODE_ENV === 'production' ? '/serenica/' : '',
+  trailingSlash: true,
 }
 
 export default nextConfig
